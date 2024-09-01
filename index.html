@@ -3,97 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Mobile Developer</title>
-    <link rel="stylesheet" href="img/java.png">
+    <title>Crafting the Future, One App at a Time</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="logo">MyPortfolio</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header id="home">
-        <div class="video-background">
-            <img src="img/background.jpg"  alt="background">
-        </div>
-        <div class="header-content">
-            <h1>Crafting Seamless Mobile Experiences</h1>
-            <p>Blending creativity with code to build apps that delight users.</p>
-            <a href="#projects" class="cta-button">Discover My Work</a>
-        </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#landing">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-<h4>this Portfolio is under construction <h4>
-    <section id="about" class="section-dark">
-        <h2>About Me</h2>
-        <p>I specialize in developing high-quality mobile applications for both Android and iOS platforms. My work combines the best of both worlds: the sleek, user-friendly designs inspired by Apple and the dynamic, innovative features found in Android.</p>
-        <p>I've mastered programming languages like C, C++, Core Java, Advanced Java, and Python, and have experience with tools such as MySQL, JDBC, JUnit, Servlet, Hibernate, Spring Boot, Flask, and Android Development.</p>
-    </section>
 
-    <section id="skills" class="section-light">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item android">
-                <img src="https://img.icons8.com/?size=100&id=17836&format=png&color=000000" alt="Android">
-                <span>Android</span>
-            </div>
-            <div class="skill-item ios">
-                <img src="img/apple-logo.png" alt="iOS"><br>
-                <span>iOS</span>
-            </div>
-            <div class="skill-item java">
-                <img src="img/java.png" alt="Java"><br>
-                <span>Java</span>
-            </div>
-            <div class="skill-item python">
-                <img src="img/python.png" alt="Python"><br>
-                <span>Python</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section-dark">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project-item android">
-                <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Android App GIF">
-                <h3>Android App</h3>
-                <p>A robust Android application with a focus on user experience and performance.</p>
-                <a href="#" class="cta-button android">View Project</a>
-            </div>
-            <div class="project-item ios">
-                <img src="https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif" alt="iOS App GIF">
-                <h3>iOS App</h3>
-                <p>An elegant iOS app designed with seamless integration and smooth functionality.</p>
-                <a href="#" class="cta-button ios">View Project</a>
-            </div>
-            <div class="project-item hybrid">
-                <img src="https://media.giphy.com/media/l0HUftKDQw6dHWrEk/giphy.gif" alt="Hybrid App GIF">
-                <h3>Hybrid App</h3>
-                <p>A cross-platform application using Flutter, offering the best of both Android and iOS.</p>
-                <a href="#" class="cta-button hybrid">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <center>
-        <section id="contact" class="section-light">
-            <center><h2>Contact</h2> </center>
-            <p>If you'd like to collaborate, feel free to reach out at <a href="mailto:abhijeetskakade04@gmail.com">abhijeetskakade04@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/abhijeet-kakade-384a9a253/">LinkedIn</a>.</p>
+    <main>
+        <section id="landing">
+            <h1 class="fade-in">Crafting the Future, One App at a Time</h1>
+            <p class="fade-in">Not just a developer—an innovator who transforms ideas into impactful mobile experiences.</p>
+            <a href="#contact" class="cta-button fade-in">Let's Build Something Amazing</a>
+            <img src="/api/placeholder/1200/600" alt="Mobile app development illustration" class="fade-in">
         </section>
-    </center>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">Beyond the Code</h2>
+                <img src="/api/placeholder/800/400" alt="Developer journey timeline">
+                <!-- Add more content for the About section here -->
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Portfolio Showcase</h2>
+                <div class="project-card">
+                    <img src="/api/placeholder/600/400" alt="Project 1 screenshot">
+                    <h3>Project 1: Innovative App</h3>
+                    <p>Description of the project and its impact...</p>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/600/400" alt="Project 2 screenshot">
+                    <h3>Project 2: Game-Changing Solution</h3>
+                    <p>Description of the project and its impact...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Tech Arsenal</h2>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <img src="/api/placeholder/80/80" alt="Skill 1">
+                        <p>Skill 1</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="/api/placeholder/80/80" alt="Skill 2">
+                        <p>Skill 2</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="/api/placeholder/80/80" alt="Skill 3">
+                        <p>Skill 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Build the Future Together</h2>
+                <form id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Abhijeet Kakade. All rights reserved.</p>
+        <p>&copy; 2024 Mobile Developer Portfolio. All rights reserved.</p>
     </footer>
 
-    <a href="#home" class="scroll-top">↑</a>
-
+    <script src="script.js"></script>
 </body>
 </html>
