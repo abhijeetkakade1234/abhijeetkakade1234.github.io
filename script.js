@@ -13,7 +13,10 @@ gsap.from("#landing h1", {duration: 1, y: 50, opacity: 0, ease: "power3.out"});
 gsap.from("#landing p", {duration: 1, y: 50, opacity: 0, ease: "power3.out", delay: 0.5});
 gsap.from(".cta-button", {duration: 1, y: 50, opacity: 0, ease: "power3.out", delay: 1});
 
-// Animate sections on scroll
+// Add hover sound effect
+const hoverSound = new Audio('path/to/your/hover-sound.mp3');
+
+// Animate sections on scroll and add hover sound
 const sections = document.querySelectorAll('section');
 const animateSection = (entries, observer) => {
     entries.forEach(entry => {
@@ -30,26 +33,19 @@ const sectionObserver = new IntersectionObserver(animateSection, {
 
 sections.forEach(section => {
     sectionObserver.observe(section);
+    
+    // Add hover sound effect
+    section.addEventListener('mouseenter', () => {
+        hoverSound.currentTime = 0; // Reset audio to start
+        hoverSound.play();
+    });
 });
 
-// Form submission handling
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! I will get back to you soon.');
-    this.reset();
-});
-
-// Easter egg
-let keySequence = '';
-const easterEggCode = 'innovation';
-
-document.addEventListener('keydown', (e) => {
-    keySequence += e.key.toLowerCase();
-    if (keySequence.includes(easterEggCode)) {
-        alert('You found the easter egg! You truly are an innovator!');
-        keySequence = '';
-    }
-    if (keySequence.length > easterEggCode.length) {
-        keySequence = keySequence.slice(1);
-    }
-});
+// Handle GitHub repository link
+const githubRepoLink = document.getElementById('github-repo-link');
+if (githubRepoLink) {
+    githubRepoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://github.com/abhijeetkakade1234?tab=repositories', '_blank');
+    });
+}
