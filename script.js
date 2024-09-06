@@ -2,21 +2,17 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// GSAP animations
-gsap.from("#landing h1", {duration: 1, y: 50, opacity: 0, ease: "power3.out"});
-gsap.from("#landing p", {duration: 1, y: 50, opacity: 0, ease: "power3.out", delay: 0.5});
-gsap.from(".cta-button", {duration: 1, y: 50, opacity: 0, ease: "power3.out", delay: 1});
-
-// Add hover sound effect
-const hoverSound = new Audio('path/to/your/hover-sound.mp3');
-
-// Animate sections on scroll and add hover sound
+// Animate sections on scroll
 const sections = document.querySelectorAll('section');
 const animateSection = (entries, observer) => {
     entries.forEach(entry => {
@@ -32,13 +28,9 @@ const sectionObserver = new IntersectionObserver(animateSection, {
 });
 
 sections.forEach(section => {
-    sectionObserver.observe(section);
-    
-    // Add hover sound effect
-    section.addEventListener('mouseenter', () => {
-        hoverSound.currentTime = 0; // Reset audio to start
-        hoverSound.play();
-    });
+    if (section.id !== 'landing') {
+        sectionObserver.observe(section);
+    }
 });
 
 // Handle GitHub repository link
@@ -49,3 +41,22 @@ if (githubRepoLink) {
         window.open('https://github.com/abhijeetkakade1234?tab=repositories', '_blank');
     });
 }
+
+// Set up the skills scrolling animation
+const skillsContainer = document.querySelector('.skills-container');
+const skillsWrapper = document.createElement('div');
+skillsWrapper.className = 'skills-wrapper';
+const skills = Array.from(skillsContainer.children);
+
+// Clone the skills to create a seamless loop
+skills.forEach(skill => {
+    skillsWrapper.appendChild(skill.cloneNode(true));
+});
+
+// Add the original skills
+skills.forEach(skill => {
+    skillsWrapper.appendChild(skill);
+});
+
+skillsContainer.innerHTML = '';
+skillsContainer.appendChild(skillsWrapper);
