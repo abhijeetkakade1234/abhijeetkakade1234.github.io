@@ -165,6 +165,7 @@ function lexal_tm_isotope() {
   "use strict";
   jQuery(".masonry").isotope({ itemSelector: ".masonry_item", masonry: {} });
 }
+
 function lexal_tm_contact_form() {
   "use strict";
   jQuery(".contact_form #send_message").on("click", function () {
@@ -212,6 +213,7 @@ function lexal_tm_contact_form() {
     return false;
   });
 }
+
 function lexal_tm_anchor() {
   "use strict";
   jQuery(".anchor_nav").onePageNav();
