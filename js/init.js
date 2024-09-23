@@ -1,39 +1,39 @@
 jQuery(document).ready(function () {
   "use strict";
   ajaxCustom();
-  lexal_tm_menu();
-  lexal_tm_about_hero();
-  lexal_tm_imgtosvg();
-  lexal_tm_hero_overlay();
-  lexal_tm_jarallax();
-  lexal_tm_data_images();
-  lexal_tm_isotope();
-  lexal_tm_contact_form();
-  lexal_tm_anchor();
-  lexal_tm_magnific_popup();
-  lexal_tm_waypoints();
-  lexal_tm_waypoints2();
-  lexal_tm_kenburn_slider();
-  lexal_tm_ripple();
-  lexal_tm_animate_text();
+  sexy_tm_menu();
+  sexy_tm_about_hero();
+  sexy_tm_imgtosvg();
+  sexy_tm_hero_overlay();
+  sexy_tm_jarallax();
+  sexy_tm_data_images();
+  sexy_tm_isotope();
+  sexy_tm_contact_form();
+  sexy_tm_anchor();
+  sexy_tm_magnific_popup();
+  sexy_tm_waypoints();
+  sexy_tm_waypoints2();
+  sexy_tm_kenburn_slider();
+  sexy_tm_ripple();
+  sexy_tm_animate_text();
   jQuery(window).on("resize", function () {
-    lexal_tm_about_hero();
-    lexal_tm_isotope();
+    sexy_tm_about_hero();
+    sexy_tm_isotope();
   });
   jQuery(window).load("body", function () {
     setTimeout(function () {
-      lexal_tm_preloader();
+      sexy_tm_preloader();
     }, 1000);
     setTimeout(function () {
-      lexal_tm_load();
+      sexy_tm_load();
     }, 5000);
   });
 });
 function ajaxCustom() {
   "use strict";
-  jQuery(".lexal_tm_load_more a").on("click", function () {
+  jQuery(".sexy_tm_load_more a").on("click", function () {
     var element = jQuery(this);
-    var shape = jQuery(".lexal_tm_load_more .svg");
+    var shape = jQuery(".sexy_tm_load_more .svg");
     var span = element.find("span");
     if (!element.hasClass("opened")) {
       element.addClass("opened");
@@ -56,7 +56,7 @@ function ajaxCustom() {
                 '</span></div><a class="full_link" href="' +
                 data.portfolio[i].pageURL +
                 '"></a></div></li>';
-              jQuery(".lexal_tm_portfolio_list").append(list);
+              jQuery(".sexy_tm_portfolio_list").append(list);
               shape.removeClass("animate");
               span.removeClass("change");
             }
@@ -70,56 +70,56 @@ function ajaxCustom() {
     return false;
   });
 }
-function lexal_tm_menu() {
+function sexy_tm_menu() {
   "use strict";
   var t1 = new TimelineMax({ paused: true });
-  t1.to(".lexal_tm_border.top .trigger .one", 0.5, {
+  t1.to(".sexy_tm_border.top .trigger .one", 0.5, {
     y: 6,
     rotation: 45,
     ease: Expo.easeinOut,
   });
-  t1.to(".lexal_tm_border.top .trigger .two", 0.5, {
+  t1.to(".sexy_tm_border.top .trigger .two", 0.5, {
     y: -6,
     rotation: -45,
     ease: Expo.easeinOut,
     delay: -0.5,
   });
-  t1.to(".lexal_tm_menu", 0.5, {
+  t1.to(".sexy_tm_menu", 0.5, {
     right: "-40px",
     ease: Expo.easeinOut,
     delay: -0.5,
   });
   t1.staggerFrom(
-    ".lexal_tm_menu .nav_list ul li",
+    ".sexy_tm_menu .nav_list ul li",
     0.4,
     { x: 25, opacity: 0, ease: Expo.easeinOut },
     0.1
   );
   t1.reverse();
-  jQuery(".lexal_tm_border.top .trigger").on("click", function () {
+  jQuery(".sexy_tm_border.top .trigger").on("click", function () {
     t1.reversed(!t1.reversed());
     return false;
   });
-  jQuery(".lexal_tm_menu .nav_list ul li a").on("click", function () {
+  jQuery(".sexy_tm_menu .nav_list ul li a").on("click", function () {
     t1.reversed(!t1.reversed());
     return false;
   });
 }
-function lexal_tm_about_hero() {
+function sexy_tm_about_hero() {
   "use strict";
   var wh = jQuery(window).height();
-  var box = jQuery(".lexal_tm_samebox_wrap .leftbox");
+  var box = jQuery(".sexy_tm_samebox_wrap .leftbox");
   box.css({ height: wh - 90 });
 }
-function lexal_tm_hero_overlay() {
+function sexy_tm_hero_overlay() {
   "use strict";
   jQuery(window).on("scroll", function () {
     var currentScroll = window.pageYOffset;
     var scrollOpacity = 1 - currentScroll / 550;
-    jQuery(".lexal_tm_home_hero").css({ opacity: scrollOpacity });
+    jQuery(".sexy_tm_home_hero").css({ opacity: scrollOpacity });
   });
 }
-function lexal_tm_imgtosvg() {
+function sexy_tm_imgtosvg() {
   "use strict";
   jQuery("img.html").each(function () {
     var jQueryimg = jQuery(this);
@@ -139,7 +139,7 @@ function lexal_tm_imgtosvg() {
     );
   });
 }
-function lexal_tm_jarallax() {
+function sexy_tm_jarallax() {
   "use strict";
   jQuery(".jarallax").each(function () {
     var element = jQuery(this);
@@ -152,7 +152,7 @@ function lexal_tm_jarallax() {
     element.jarallax({ speed: customSpeed, automaticResize: true });
   });
 }
-function lexal_tm_data_images() {
+function sexy_tm_data_images() {
   "use strict";
   var data = jQuery("*[data-img-url]");
   data.each(function () {
@@ -161,12 +161,12 @@ function lexal_tm_data_images() {
     element.css({ backgroundImage: "url(" + url + ")" });
   });
 }
-function lexal_tm_isotope() {
+function sexy_tm_isotope() {
   "use strict";
   jQuery(".masonry").isotope({ itemSelector: ".masonry_item", masonry: {} });
 }
 
-function lexal_tm_contact_form() {
+function sexy_tm_contact_form() {
   "use strict";
   jQuery(".contact_form #send_message").on("click", function () {
     var name = jQuery(".contact_form #name").val();
@@ -214,7 +214,7 @@ function lexal_tm_contact_form() {
   });
 }
 
-function lexal_tm_anchor() {
+function sexy_tm_anchor() {
   "use strict";
   jQuery(".anchor_nav").onePageNav();
   var scrollOffset = 0;
@@ -227,7 +227,7 @@ function lexal_tm_anchor() {
     return false;
   });
 }
-function lexal_tm_magnific_popup() {
+function sexy_tm_magnific_popup() {
   "use strict";
   jQuery(".open-popup-link").magnificPopup({ type: "inline", midClick: true });
   jQuery(".gallery").each(function () {
@@ -257,9 +257,9 @@ function lexal_tm_magnific_popup() {
     });
   });
 }
-function lexal_tm_preloader() {
+function sexy_tm_preloader() {
   "use strict";
-  var mainPreloader = $(".lexal_tm_loader-wrapper .loader");
+  var mainPreloader = $(".sexy_tm_loader-wrapper .loader");
   var WinWidth = $(window).width();
   var WinHeight = $(window).height();
   var zero = 0;
@@ -273,13 +273,13 @@ function lexal_tm_preloader() {
     mainPreloader.animate({ top: "0", height: "100vh" });
   }
   setTimeout(function () {
-    $(".lexal_tm_loader-wrapper").fadeOut("fast");
+    $(".sexy_tm_loader-wrapper").fadeOut("fast");
     mainPreloader.fadeOut("fast");
   }, 4500);
 }
-function lexal_tm_waypoints() {
+function sexy_tm_waypoints() {
   "use strict";
-  var div = jQuery(".lexal_tm_waypoint_effect");
+  var div = jQuery(".sexy_tm_waypoint_effect");
   div.each(function () {
     var element = jQuery(this);
     element.waypoint({
@@ -290,9 +290,9 @@ function lexal_tm_waypoints() {
     });
   });
 }
-function lexal_tm_waypoints2() {
+function sexy_tm_waypoints2() {
   "use strict";
-  var div = jQuery(".lexal_tm_waypoint_effect2");
+  var div = jQuery(".sexy_tm_waypoint_effect2");
   div.each(function () {
     var element = jQuery(this);
     element.waypoint({
@@ -303,17 +303,17 @@ function lexal_tm_waypoints2() {
     });
   });
 }
-function lexal_tm_load() {
+function sexy_tm_load() {
   "use strict";
-  jQuery(".lexal_tm_home_hero .overlay_texts .name").addClass("animate");
-  jQuery(".lexal_tm_home_hero .overlay_texts .subtitle").addClass("animate");
-  jQuery(".lexal_tm_home_hero .lexal_tm_down").addClass("animate");
-  jQuery(".lexal_tm_home_hero .image").addClass("animate");
+  jQuery(".sexy_tm_home_hero .overlay_texts .name").addClass("animate");
+  jQuery(".sexy_tm_home_hero .overlay_texts .subtitle").addClass("animate");
+  jQuery(".sexy_tm_home_hero .sexy_tm_down").addClass("animate");
+  jQuery(".sexy_tm_home_hero .image").addClass("animate");
 }
-function lexal_tm_kenburn_slider() {
+function sexy_tm_kenburn_slider() {
   "use strict";
   jQuery(function () {
-    jQuery(".lexal_tm_home_hero .overlay_slider").vegas({
+    jQuery(".sexy_tm_home_hero .overlay_slider").vegas({
       timer: false,
       animation: ["kenburnsUp", "kenburnsLeft", "kenburnsRight"],
       delay: 7000,
@@ -325,7 +325,7 @@ function lexal_tm_kenburn_slider() {
     });
   });
 }
-function lexal_tm_ripple() {
+function sexy_tm_ripple() {
   "use strict";
   jQuery("#ripple").ripples({
     resolution: 500,
@@ -334,9 +334,9 @@ function lexal_tm_ripple() {
   });
 }
 $(".youtube-bg").mb_YTPlayer();
-function lexal_tm_animate_text() {
+function sexy_tm_animate_text() {
   "use strict";
-  var animateSpan = jQuery(".lexal_tm_animation_text_word");
+  var animateSpan = jQuery(".sexy_tm_animation_text_word");
   animateSpan.typed({
     strings: ["Freelancer", "UI/UX Designer", "Web Developer"],
     loop: true,
