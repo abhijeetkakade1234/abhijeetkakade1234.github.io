@@ -583,6 +583,36 @@ img.svg {
     width: 100%
 }
 
+.lexal_tm_button1 button {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    background-color: #fff;
+    padding: 8px 40px;
+    border-radius: 3px;
+    font-family: 'Saira', sans-serif;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lexal_tm_button1 button:hover {
+    background-color: #e9204f;
+    color: #fff;
+}
+
+.lexal_tm_button1 button span {
+    color: #000;
+}
+
+.lexal_tm_button1 button:hover span {
+    color: #fff;
+}
+
+
 .lexal_tm_services.lexal_tm_waypoint_effect.load ul li {
     opacity: 1;
     top: 0
