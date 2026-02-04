@@ -1338,7 +1338,7 @@ Total Duration: ${_-S}ms`),Y.resolve({didRun:!0,sequenceNumbersCollected:c,targe
  * limitations under the License.
  */class AT{constructor(){this.overlays=new se(ct.comparator),this.Rr=new Map}getOverlay(n,a){return Y.resolve(this.overlays.get(a))}getOverlays(n,a){const s=pa();return Y.forEach(a,c=>this.getOverlay(n,c).next(f=>{f!==null&&s.set(c,f)})).next(()=>s)}saveOverlays(n,a,s){return s.forEach((c,f)=>{this.Et(n,a,f)}),Y.resolve()}removeOverlaysForBatchId(n,a,s){const c=this.Rr.get(s);return c!==void 0&&(c.forEach(f=>this.overlays=this.overlays.remove(f)),this.Rr.delete(s)),Y.resolve()}getOverlaysForCollection(n,a,s){const c=pa(),f=a.length+1,m=new ct(a.child("")),y=this.overlays.getIteratorFrom(m);for(;y.hasNext();){const v=y.getNext().value,_=v.getKey();if(!a.isPrefixOf(_.path))break;_.path.length===f&&v.largestBatchId>s&&c.set(v.getKey(),v)}return Y.resolve(c)}getOverlaysForCollectionGroup(n,a,s,c){let f=new se((_,S)=>_-S);const m=this.overlays.getIterator();for(;m.hasNext();){const _=m.getNext().value;if(_.getKey().getCollectionGroup()===a&&_.largestBatchId>s){let S=f.get(_.largestBatchId);S===null&&(S=pa(),f=f.insert(_.largestBatchId,S)),S.set(_.getKey(),_)}}const y=pa(),v=f.getIterator();for(;v.hasNext()&&(v.getNext().value.forEach((_,S)=>y.set(_,S)),!(y.size()>=c)););return Y.resolve(y)}Et(n,a,s){const c=this.overlays.get(s.key);if(c!==null){const m=this.Rr.get(c.largestBatchId).delete(s.key);this.Rr.set(c.largestBatchId,m)}this.overlays=this.overlays.insert(s.key,new jE(a,s));let f=this.Rr.get(a);f===void 0&&(f=Nt(),this.Rr.set(a,f)),this.Rr.set(a,f.add(s.key))}}/**
  * @license
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1913,7 +1913,7 @@ This typically indicates that your device does not have a healthy Internet conne
  * limitations under the License.
  */class zA{constructor(n,a){if(!isFinite(n)||n<-90||n>90)throw new ot(J.INVALID_ARGUMENT,"Latitude must be a number between -90 and 90, but was: "+n);if(!isFinite(a)||a<-180||a>180)throw new ot(J.INVALID_ARGUMENT,"Longitude must be a number between -180 and 180, but was: "+a);this._lat=n,this._long=a}get latitude(){return this._lat}get longitude(){return this._long}isEqual(n){return this._lat===n._lat&&this._long===n._long}toJSON(){return{latitude:this._lat,longitude:this._long}}_compareTo(n){return Et(this._lat,n._lat)||Et(this._long,n._long)}}/**
  * @license
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
