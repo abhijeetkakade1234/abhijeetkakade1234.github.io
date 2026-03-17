@@ -725,3 +725,35 @@ p.body-text {
 /* Fade-in animation */
 .newspaper { animation: fadeIn 0.8s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── DISPATCHES LIST ── */
+.dispatches-list {
+  margin-top: 10px;
+}
+.dispatch-item {
+  border-bottom: 1px dashed rgba(26,16,8,0.2);
+  padding: 10px 0;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+.dispatch-item:hover {
+  background: rgba(139, 26, 26, 0.05);
+  padding-left: 5px;
+}
+.dispatch-item:last-child {
+  border-bottom: none;
+}
+.dispatch-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.dispatch-insight {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink-light);
+  opacity: 0.85;
+}

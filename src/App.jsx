@@ -112,10 +112,15 @@ function App() {
               <div className="col-divider"></div>
               <div className="col">
                 <p className="subhead">{publications.blogsTitle}</p>
-                <p className="body-text" style={{ fontStyle: 'italic', marginBottom: '15px' }}>
-                  {publications.description}
-                </p>
-                <div style={{ textAlign: 'center', marginBottom: '15px' }}>
+                <div className="dispatches-list">
+                  {publications.recentDispatches.map((dispatch, idx) => (
+                    <a key={idx} href={dispatch.url} target="_blank" rel="noreferrer" className="dispatch-item" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                      <p className="dispatch-title">{dispatch.title}</p>
+                      <p className="dispatch-insight">{dispatch.insight}</p>
+                    </a>
+                  ))}
+                </div>
+                <div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
                    <a href={publications.url} target="_blank" rel="noreferrer" className="project-link">Read Full Periodicals →</a>
                 </div>
                 <div className="photo-box">
