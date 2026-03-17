@@ -29,6 +29,11 @@ const ProjectDetail = ({ project, onBack }) => {
         </button>
         <span className="kicker" style={{ clear: 'both', display: 'block', paddingTop: '10px' }}>{project.category} Report</span>
         <h1 className="headline-main" style={{ fontSize: '3rem' }}>{project.title}</h1>
+        {project.impact && (
+          <div className="impact-box" style={{ maxWidth: '600px', margin: '15px auto', padding: '10px 15px', fontSize: '0.9rem' }}>
+            <span className="impact-symbol">⚡</span> <strong>PRIMARY OUTCOME:</strong> {project.impact}
+          </div>
+        )}
         <div className="masthead-rule-thin" style={{ maxWidth: '400px', margin: '10px auto' }}></div>
       </div>
 

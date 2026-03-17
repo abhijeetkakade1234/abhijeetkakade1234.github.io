@@ -1,9 +1,14 @@
 import React from 'react';
 
-const ProjectCard = ({ title, category, techStack, description, url, onReadMore }) => {
+const ProjectCard = ({ title, category, techStack, description, impact, url, onReadMore }) => {
   return (
     <div className="project-card">
       <h3 className="project-title">{title}</h3>
+      {impact && (
+        <div className="impact-box" title="Outcome Displacement">
+          <span className="impact-symbol">⚡</span> {impact}
+        </div>
+      )}
       <p className="body-text" style={{ textAlign: 'left' }}>
         {description}
       </p>
