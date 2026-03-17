@@ -6,6 +6,7 @@ import Timeline from './components/Timeline';
 import ProjectDetail from './components/ProjectDetail';
 import SundaySupplement from './components/SundaySupplement';
 import ProjectArchives from './components/ProjectArchives';
+import ExperienceDetail from './components/ExperienceDetail';
 import data from './data/portfolioData.json';
 
 function App() {
@@ -42,6 +43,11 @@ function App() {
     window.scrollTo(0, 0);
   };
 
+  const handleExperience = (exp) => {
+    setView({ type: 'experience', data: exp });
+    window.scrollTo(0, 0);
+  };
+
   const handleBack = (sectionId = null) => {
     setView({ type: 'home', data: null });
     setScrollTarget(sectionId || 'top');
@@ -70,7 +76,17 @@ function App() {
             <div className="front-headline">
               <span className="kicker">{about.kicker}</span>
               <h1 className="headline-main">{about.headline}</h1>
+              <div className="headline-byline">Written & Engineered by <span style={{ color: 'var(--accent)', fontWeight: 'bold' }}>{personalInfo.name}</span></div>
               <p className="headline-deck">{about.deck}</p>
+              
+              <div className="hero-cta-box">
+                <a href={personalInfo.cvUrl} download className="gazette-btn btn-primary" title="Download Official PDF">
+                  📜 View Full Record (Resume)
+                </a>
+                <button onClick={() => handleBack('contact')} className="gazette-btn btn-secondary" title="Establish Correspondence">
+                  📨 Send Dispatch (Contact)
+                </button>
+              </div>
             </div>
 
             <div className="col-grid col-grid-3">
@@ -91,7 +107,10 @@ function App() {
                     <img src={personalInfo.avatarGif} alt={personalInfo.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                  </div>
                  <p className="subhead" style={{ marginBottom: '4px' }}>{personalInfo.name}</p>
-                 <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.8rem', fontStyle: 'italic', marginBottom: '12px' }}>{personalInfo.role}</p>
+                 <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.85rem', fontStyle: 'italic', marginBottom: '8px', color: 'var(--accent)', fontWeight: 'bold', letterSpacing: '0.01em', textTransform: 'uppercase' }}>
+                   {personalInfo.powerLine}
+                 </p>
+                 <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.78rem', fontStyle: 'italic', marginBottom: '12px', opacity: 0.8 }}>{personalInfo.role}</p>
                  
                  <div className="stats-row">
                     <div className="stat-item">
@@ -99,8 +118,12 @@ function App() {
                       <span className="stat-label">Projects</span>
                     </div>
                     <div className="stat-item">
-                      <span className="stat-number">{personalInfo.awards}</span>
-                      <span className="stat-label">{personalInfo.awards > 1 ? 'Awards' : 'Award'}</span>
+                      <span className="stat-number">{personalInfo.studentsImpacted}</span>
+                      <span className="stat-label">Users Impacted</span>
+                    </div>
+                    <div className="stat-item">
+                      <span className="stat-number">{personalInfo.awards + personalInfo.hackathons}</span>
+                      <span className="stat-label">{(personalInfo.awards + personalInfo.hackathons) > 1 ? 'Wins & Honors' : 'Major Win'}</span>
                     </div>
                  </div>
 
@@ -210,7 +233,7 @@ function App() {
             <div className="col-grid col-grid-2">
               <div className="col">
                  <h2 className="headline-main" style={{ fontSize: '1.8rem', marginBottom: '8px' }}>A Chronology of Professional Endeavours</h2>
-                 <Timeline items={experience} />
+                 <Timeline items={experience} onReadMore={handleExperience} />
               </div>
               <div className="col-divider"></div>
               <div className="col" id="contact">
@@ -250,9 +273,26 @@ function App() {
               </div>
             </div>
           </section>
+
+          {/* FINAL CTA DISPATCH */}
+          <section className="page animated fadeIn" style={{ paddingBottom: '60px' }}>
+            <div className="footer-cta-box" style={{ borderTop: '3px double var(--ink)', paddingTop: '40px', textAlign: 'center' }}>
+              <p className="subhead" style={{ marginBottom: '24px', fontSize: '1.6rem' }}>Official Correspondence & Records</p>
+              <div className="hero-cta-box" style={{ justifyContent: 'center', marginTop: 0, gap: '20px' }}>
+                <a href={personalInfo.cvUrl} download className="gazette-btn btn-primary" style={{ padding: '14px 32px', fontSize: '1.1rem' }}>
+                  📜 Download Full CV (PDF)
+                </a>
+                <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="gazette-btn btn-secondary" style={{ padding: '14px 32px', fontSize: '1.1rem' }}>
+                  🗞️ Return to Masthead
+                </button>
+              </div>
+            </div>
+          </section>
         </>
       ) : view.type === 'project' ? (
         <ProjectDetail project={view.data} onBack={handleBack} />
+      ) : view.type === 'experience' ? (
+        <ExperienceDetail item={view.data} onBack={handleBack} />
       ) : view.type === 'photography' ? (
         <SundaySupplement photography={view.data} onBack={handleBack} />
       ) : (

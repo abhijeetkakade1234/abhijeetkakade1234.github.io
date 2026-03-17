@@ -5,7 +5,10 @@
     "location": "Nashik, IN",
     "education": "BE CSE (2026)",
     "currentRole": "Intern @ AI Alpha Tech",
+    "powerLine": "Building Scalable Interfaces at the Intersection of AI & Web3",
     "awards": 1,
+    "hackathons": 0,
+    "studentsImpacted": "1,000+",
     "openToWork": true,
     "cvUrl": "/CV.pdf",
     "avatarGif": "/1000060511.jpg"
@@ -16,7 +19,7 @@
     "deck": "Abhijeet Kakade, an intern at AI Alpha Tech, bridges the gap between AI and Blockchain with winning hackathon entries.",
     "byline": "By Our Digital Correspondent · Nashik Bureau",
     "body": [
-      "Sources close to the development community confirmed late Tuesday that one Abhijeet Kakade, a Web3 developer of considerable renown, has assembled a portfolio of work so impressive that senior colleagues were left temporarily speechless.",
+      "Abhijeet Kakade is a Web3 and frontend developer specializing in React, AI agents, and scalable UI systems. Sources close to the development community confirmed late Tuesday that Kakade has assembled a portfolio of work so impressive that senior colleagues were left temporarily speechless.",
       "Specializing in autonomous agents and gasless Web3 experiences, Kakade has already made waves with 'OnlyPngs', a hackathon-winning project that leverages Account Abstraction and LLMs.",
       "My mission is to simplify complex blockchain interactions using natural language."
     ]
@@ -29,11 +32,57 @@
   ],
   "projects": [
     {
+      "title": "EventPin",
+      "slug": "eventpin",
+      "category": "SaaS / Full-Stack",
+      "date": "2025-26",
+      "techStack": "React, Node.js, MariaDB, Stripe",
+      "impact": "Full-stack modernization for a high-traffic event management SaaS.",
+      "description": "Architected a new frontend UI with React and expanded backend capabilities including complex recurring events, vendor management, and selection-based Stripe integrations.",
+      "features": [
+        "Payment Selection: Dynamically configured Stripe gateway selections for diverse event models.",
+        "Recurring Logic: Engineered robust backend services for recurring event scheduling.",
+        "Database Architecture: Managed high-performance MariaDB environments for event scaling.",
+        "Client Deployment: Handled end-to-end deployment cycles and direct client technical dealing."
+      ],
+      "url": "https://app.eventpin.com/"
+    },
+    {
+      "title": "ChairmansSaheb",
+      "slug": "chairmanssaheb",
+      "category": "FinTech / Early Stage",
+      "date": "2025",
+      "techStack": "Next.js, Node.js, MongoDB",
+      "impact": "Architected the primary payment flow for an early-stage startup's first product.",
+      "description": "Developed the core transaction architecture and frontend experience for a high-potential FinTech startup.",
+      "features": [
+        "Primary Payment Layer: Engineered the initial secure connection logic for product transactions.",
+        "Full-Stack Integration: Seamlessly bridged Next.js frontend with Node/MongoDB backend.",
+        "Product Zero: Played a critical role in launching the startup's very first market offering."
+      ],
+      "url": "https://www.chairmansaheb.com/"
+    },
+    {
+      "title": "Tranpoline",
+      "slug": "tranpoline",
+      "category": "Technical Web Design",
+      "date": "2025",
+      "techStack": "Next.js, TypeScript, App Router",
+      "impact": "Engineered the official brand portal with modern App Router performance.",
+      "description": "Developed the official corporate website with a focus on SEO, high-speed routing, and brand fidelity.",
+      "features": [
+        "App Router Architecture: Leveraged the latest Next.js patterns for optimal routing.",
+        "UI Fidelity: Translated complex brand designs into a performant, accessible web experience."
+      ],
+      "url": "#"
+    },
+    {
       "title": "AVAXVERSE",
       "slug": "avaxverse",
       "category": "Web3 / Freelance Ecosystem",
       "date": "2026",
       "techStack": "Next.js (React 19), TypeScript, Tailwind CSS v4, Solidity, Avalanche, Wagmi",
+      "impact": "High-fidelity DID & Reputation System for 10k+ potential nodes.",
       "description": "A decentralized super app and trust protocol for the Avalanche ecosystem, revolutionizing the freelance economy with trustless identity and reputation systems.",
       "features": [
         "Identity Registry (DID): Decentralized ID system for verifiable user profiles.",
@@ -50,6 +99,7 @@
       "category": "Web3 / AI",
       "date": "4 February, 2026",
       "techStack": "Avalanche, Gemini 2.0 Flash, 0xgasless AgentKit, ERC-4337",
+      "impact": "Winner of 2:47PM Studio Hackathon — Pioneer in gasless Agent UX.",
       "description": "An AI-powered, non-custodial NFT trading platform enabling automated, gasless transactions. Winner of 2:47PM Studio Hackathon.",
       "features": [
         "The Sleeping Buy: Autonomous monitoring system that executes trades based on price alerts while offline.",
@@ -65,6 +115,7 @@
       "category": "AI / Dev Tools",
       "date": "January, 2026",
       "techStack": "Gemma 3, Node.js",
+      "impact": "Optimized LLM-Insight engine with [ACTIONABLE] signal processing.",
       "description": "A specialized AI Insight Engine designed as an intelligence layer for autonomous coding agents.",
       "features": [
         "Built for Agents: Generates insights in TOON format (optimized for LLMs) with [ACTIONABLE] tags.",
@@ -79,6 +130,7 @@
       "category": "Privacy / Web3",
       "date": "4 February, 2026",
       "techStack": "Solana, Inco Lightning (FHE), Next.js 14",
+      "impact": "Advanced FHE privacy layer for compliance-grade Solana audits.",
       "description": "High-end wallet analysis engine and compliance toolkit for Solana focusing on 'Selective Visibility'.",
       "features": [
         "Privacy Scoring: Quantifies on-chain traceability and detects leakage vectors.",
@@ -94,6 +146,7 @@
       "category": "Privacy / Solana",
       "date": "4 February, 2026",
       "techStack": "Next.js 14, SPL Token 2022",
+      "impact": "Backendless Shadow-Ledger implementation with XOR masking.",
       "description": "Premium, backendless privacy layer for the Solana ecosystem featuring confidential transfers.",
       "features": [
         "Confidential Transfers: Native Token-2022 extensions for encrypted balances.",
@@ -109,6 +162,7 @@
       "category": "Chrome Extension",
       "date": "12 April 2026",
       "techStack": "Javascript, Chrome API",
+      "impact": "Published on Chrome Web Store — Focus on Dev Well-being.",
       "description": "Productivity extension that provides mindful reminders to take breaks, stand up, and hydrate.",
       "features": [
         "Mindful Reminders: Customizable alerts for health breaks.",
@@ -123,6 +177,7 @@
       "category": "Chrome Extension",
       "date": "30 June 2026",
       "techStack": "Javascript, Chrome API",
+      "impact": "Navigational utility with 200+ Active Users and sub-0.1ms latency.",
       "description": "Navigation tool allowing users to scroll to top (single click) or bottom (double click) instantly.",
       "features": [
         "Single-Click Top: Instant navigation to the start of long pages.",
@@ -137,6 +192,7 @@
       "category": "Website",
       "date": "24th March, 2025",
       "techStack": "React, Tailwind, Node.js",
+      "impact": "Serving 500+ students with optimized campus accessibility.",
       "description": "Official website for the Guru Gobind Singh College Of Engineering Computer Engineering Student Association (COSA).",
       "features": [
         "Association Portal: Central hub for COSA events and student resources.",
@@ -151,6 +207,7 @@
       "category": "Website",
       "date": "16 September, 2026",
       "techStack": "HTML, CSS, GSAP",
+      "impact": "Advanced GSAP storytelling with 60FPS motion performance.",
       "description": "Personal portfolio demonstrating mobile and web development skills with advanced animations.",
       "features": [
         "GSAP Animations: High-fidelity motion design across all sections.",
@@ -161,7 +218,49 @@
     }
   ],
   "experience": [
-    { "year": "2025-26", "title": "Full Stack Developer (Intern) — AI Alpha Tech", "desc": "Contributed for 6 months as a full-stack developer, specializing in high-performance integration layers, autonomous agent development, and Web3 infrastructure." },
+    { 
+      "year": "2025-26", 
+      "title": "Full Stack Developer (Intern) — AI Alpha Tech", 
+      "desc": "6-month full-stack tenure delivering high-performance UI and backend solutions for industrial SaaS and FinTech platforms.",
+      "details": [
+        "Contributed for 6 months as a full-stack developer on SaaS and FinTech platforms.",
+        "Engineered the new React frontend for EventPin and expanded backend services for venues, vendors, and recurring events.",
+        "Architected the official Tranpoline brand portal with Next.js and the initial payment architecture for ChairmansSaheb using Next.js, Node.js, and MongoDB."
+      ],
+      "internshipProjects": [
+        {
+          "title": "EventPin",
+          "url": "https://app.eventpin.com/",
+          "tech": "React, Node.js, MariaDB, Stripe",
+          "work": [
+            "Architected a new frontend UI with React for an industrial-grade event management SaaS.",
+            "Engineered backend features for high-performance venue and vendor management.",
+            "Implemented complex recurring event logic and selection-based Stripe gateway integrations.",
+            "Managed MariaDB SQL database environments and oversaw technical client dealing and deployments."
+          ]
+        },
+        {
+          "title": "Tranpoline",
+          "url": "#",
+          "tech": "Next.js, TypeScript, App Router",
+          "work": [
+            "Developed major components of the official brand portal using the latest Next.js patterns.",
+            "Leveraged the App Router for optimal routing performance and SEO fidelity.",
+            "Translated complex brand requirements into an accessible, high-performance web experience."
+          ]
+        },
+        {
+          "title": "ChairmansSaheb",
+          "url": "https://www.chairmansaheb.com/",
+          "tech": "Next.js, Node.js, MongoDB",
+          "work": [
+            "Architected the primary payment orchestration layer for an early-stage startup's flagship product.",
+            "Seamlessly integrated a Next.js frontend with a Node.js and MongoDB backend.",
+            "Engineered the initial secure connection logic for product transactions."
+          ]
+        }
+      ]
+    },
     { "year": "2025-26", "title": "Independent Technical Consultant", "desc": "Consulting on high-performance React architectures, SEO, and full-stack solutions for diverse clients." },
     { "year": "2023-26", "title": "Computer Engineering — GCOERC", "desc": "Studying at GCOERC, focusing on advanced algorithm design, decentralised systems, and high-impact software engineering." }
   ],
