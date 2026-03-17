@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Portfolio Gazette — Est. 2024</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #1a1008;
+    --ink-light: #2e1f0e;
+    --paper: #f0e6c8;
+    --paper-dark: #d9c89e;
+    --paper-darker: #c4ae82;
+    --accent: #8b1a1a;
+    --rule: #1a1008;
+    --shadow: rgba(26,16,8,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #b8a070;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(0,0,0,0.03) 28px, rgba(0,0,0,0.03) 29px),
+      repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(0,0,0,0.03) 28px, rgba(0,0,0,0.03) 29px);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 20px 12px 40px;
+  }
+
+  /* ── PAPER TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ══════════════════════════════════════════
+     NEWSPAPER WRAPPER
+  ══════════════════════════════════════════ */
+  .newspaper {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 4px 6px var(--shadow), 0 10px 40px rgba(0,0,0,0.35), inset 0 0 80px rgba(180,140,60,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Aged edges */
+  .newspaper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 0% 0%, rgba(80,50,10,0.18) 0%, transparent 40%),
+      radial-gradient(ellipse at 100% 0%, rgba(80,50,10,0.14) 0%, transparent 40%),
+      radial-gradient(ellipse at 0% 100%, rgba(80,50,10,0.2) 0%, transparent 40%),
+      radial-gradient(ellipse at 100% 100%, rgba(80,50,10,0.18) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .content-wrap { position: relative; z-index: 2; }
+
+  /* ══════════════════════════════════════════
+     TOP BAR
+  ══════════════════════════════════════════ */
+  .topbar {
+    border-bottom: 1px solid var(--ink);
+    padding: 6px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+  .topbar-motto { font-style: italic; }
+  .topbar-price { font-style: normal; }
+
+  /* ══════════════════════════════════════════
+     MASTHEAD
+  ══════════════════════════════════════════ */
+  .masthead {
+    padding: 18px 28px 14px;
+    text-align: center;
+    border-bottom: 3px double var(--ink);
+    position: relative;
+  }
+
+  .masthead-rule-top {
+    height: 4px;
+    background: var(--ink);
+    margin-bottom: 3px;
+  }
+  .masthead-rule-thin {
+    height: 1px;
+    background: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .masthead-flag {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: clamp(3rem, 8vw, 5.8rem);
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+  }
+
+  .masthead-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.75rem;
+    margin-top: 6px;
+    padding: 6px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .masthead-edition { font-style: italic; }
+  .masthead-tagline {
+    font-size: 0.85rem;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    color: var(--ink-light);
+  }
+
+  /* ══════════════════════════════════════════
+     NAVIGATION (Newspaper Section Headers)
+  ══════════════════════════════════════════ */
+  .navbar {
+    border-bottom: 3px solid var(--ink);
+    padding: 0;
+    background: var(--ink);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .navbar a {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper);
+    text-decoration: none;
+    padding: 9px 20px;
+    transition: background 0.2s, color 0.2s;
+    border-right: 1px solid rgba(240,230,200,0.2);
+    position: relative;
+  }
+
+  .navbar a:first-child { border-left: 1px solid rgba(240,230,200,0.2); }
+
+  .navbar a:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  .navbar a::after {
+    content: '✦';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.5rem;
+    color: rgba(240,230,200,0.3);
+  }
+  .navbar a:last-child::after { display: none; }
+
+  /* ══════════════════════════════════════════
+     SECTION LABEL
+  ══════════════════════════════════════════ */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 28px;
+    margin: 0;
+  }
+
+  .section-label-text {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3px 14px;
+    white-space: nowrap;
+  }
+
+  .section-label-rule {
+    height: 1px;
+    background: var(--ink);
+    flex: 1;
+  }
+
+  /* ══════════════════════════════════════════
+     MAIN PAGES / SECTIONS
+  ══════════════════════════════════════════ */
+  .page { padding: 22px 28px 28px; }
+
+  /* ── FRONT PAGE ── */
+  .front-headline {
+    text-align: center;
+    padding: 20px 0 14px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .kicker {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .headline-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .headline-deck {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ink-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* COLUMN GRID */
+  .col-grid { display: grid; gap: 0; }
+  .col-grid-3 { grid-template-columns: 1fr 1px 1fr 1px 1fr; }
+  .col-grid-2 { grid-template-columns: 2fr 1px 1fr; }
+  .col-grid-2-eq { grid-template-columns: 1fr 1px 1fr; }
+
+  .col-divider { background: var(--ink); opacity: 0.35; margin: 0 0px; }
+
+  .col { padding: 0 22px; }
+  .col:first-child { padding-left: 0; }
+  .col:last-child { padding-right: 0; }
+
+  /* Drop cap */
+  .dropcap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2em;
+    font-weight: 900;
+    float: left;
+    line-height: 0.72;
+    margin: 4px 8px -4px 0;
+    color: var(--ink);
+  }
+
+  p.body-text {
+    font-size: 0.88rem;
+    line-height: 1.72;
+    margin-bottom: 10px;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .byline {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 6px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(26,16,8,0.25);
+  }
+
+  /* ── SUBHEADLINE ── */
+  .subhead {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .subhead-sm {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  /* PHOTO PLACEHOLDER */
+  .photo-box {
+    border: 1px solid var(--ink);
+    margin: 12px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-box img {
+    width: 100%;
+    display: block;
+    filter: sepia(60%) contrast(1.1) brightness(0.95);
+  }
+
+  .photo-caption {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.7rem;
+    font-style: italic;
+    padding: 4px 8px;
+    border-top: 1px solid var(--ink);
+    background: rgba(26,16,8,0.04);
+    text-align: center;
+  }
+
+  /* RULE ORNAMENTAL */
+  .ornament-rule {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .ornament-rule hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid var(--ink);
+    opacity: 0.5;
+  }
+  .ornament-rule span {
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+
+  /* ══════════════════════════════════════════
+     SKILLS BOX — "NOTICES"
+  ══════════════════════════════════════════ */
+  .notices-box {
+    border: 2px solid var(--ink);
+    padding: 14px 16px;
+    margin: 14px 0;
+    position: relative;
+  }
+
+  .notices-box::before {
+    content: attr(data-title);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--paper);
+    padding: 0 8px;
+    position: absolute;
+    top: -10px;
+    left: 14px;
+  }
+
+  .skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.8rem;
+    padding: 5px 0;
+    border-bottom: 1px dotted rgba(26,16,8,0.3);
+  }
+  .skill-row:last-child { border-bottom: none; }
+
+  .skill-bar-outer {
+    width: 120px;
+    height: 6px;
+    border: 1px solid var(--ink);
+    background: rgba(26,16,8,0.05);
+    position: relative;
+  }
+  .skill-bar-inner {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    background: var(--ink);
+  }
+
+  /* ══════════════════════════════════════════
+     PROJECTS — "ADVERTISEMENTS"
+  ══════════════════════════════════════════ */
+  .project-card {
+    border: 2px solid var(--ink);
+    padding: 16px;
+    margin: 12px 0;
+    position: relative;
+    background: rgba(26,16,8,0.02);
+    transition: box-shadow 0.2s;
+  }
+
+  .project-card:hover {
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: translate(-2px,-2px);
+    transition: all 0.15s;
+  }
+
+  .project-card::before {
+    content: '— ADVERTISEMENT —';
+    font-family: 'IM Fell English', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(26,16,8,0.4);
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 6px 0;
+    margin-bottom: 10px;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0;
+  }
+
+  .tag {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    padding: 2px 8px;
+  }
+
+  .project-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  /* ══════════════════════════════════════════
+     TESTIMONIALS — "LETTERS TO THE EDITOR"
+  ══════════════════════════════════════════ */
+  .letter {
+    border-left: 3px solid var(--ink);
+    padding: 10px 14px;
+    margin: 14px 0;
+    background: rgba(26,16,8,0.03);
+    font-style: italic;
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+
+  .letter-sig {
+    font-style: normal;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+    text-align: right;
+  }
+
+  /* ══════════════════════════════════════════
+     CONTACT — "CLASSIFIED ADS"
+  ══════════════════════════════════════════ */
+  .classifieds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .classified {
+    border: 1px solid var(--ink);
+    padding: 12px;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+  }
+
+  .classified:hover { background: var(--ink); color: var(--paper); }
+
+  .classified-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .classified-title {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    display: block;
+    margin-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 4px;
+  }
+
+  /* ══════════════════════════════════════════
+     TIMELINE — "HISTORICAL RECORD"
+  ══════════════════════════════════════════ */
+  .timeline { margin: 10px 0; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 80px 20px 1fr;
+    gap: 0 12px;
+    margin-bottom: 14px;
+    align-items: start;
+  }
+
+  .timeline-year {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-align: right;
+    color: var(--ink-light);
+    padding-top: 2px;
+  }
+
+  .timeline-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .timeline-line {
+    flex: 1;
+    width: 1px;
+    background: var(--ink);
+    opacity: 0.3;
+    min-height: 30px;
+  }
+
+  .timeline-content { padding-bottom: 4px; }
+
+  .timeline-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-bottom: 2px;
+  }
+
+  .timeline-desc {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* ══════════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════════ */
+  .footer {
+    border-top: 3px double var(--ink);
+    padding: 16px 28px;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    font-style: italic;
+    color: var(--ink-light);
+    background: rgba(26,16,8,0.03);
+  }
+
+  .footer-ornament {
+    margin: 6px 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    opacity: 0.5;
+  }
+
+  /* ══════════════════════════════════════════
+     SECTION DIVIDERS
+  ══════════════════════════════════════════ */
+  .section-break {
+    border: none;
+    border-top: 1px solid var(--ink);
+    margin: 0;
+    opacity: 0.4;
+  }
+
+  .section-break-thick {
+    border: none;
+    border-top: 3px double var(--ink);
+    margin: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     PULL QUOTE
+  ══════════════════════════════════════════ */
+  .pull-quote {
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    padding: 16px 0;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  .pull-quote cite {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    opacity: 0.6;
+  }
+
+  /* ══════════════════════════════════════════
+     AVATAR CIRCLE
+  ══════════════════════════════════════════ */
+  .avatar-frame {
+    width: 130px;
+    height: 130px;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 14px;
+    box-shadow: 4px 4px 0 var(--paper-darker);
+    background: var(--paper-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    filter: sepia(30%);
+  }
+
+  /* ══════════════════════════════════════════
+     NUMBERS / STATS TICKER
+  ══════════════════════════════════════════ */
+  .stats-row {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid var(--ink);
+    padding: 12px 0;
+    margin: 16px 0;
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+    opacity: 0.65;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    body { padding: 10px 4px 30px; }
+    .col-grid-3, .col-grid-2 { grid-template-columns: 1fr; }
+    .col-divider { height: 1px; width: 100%; margin: 0; }
+    .col { padding: 0; margin-bottom: 18px; }
+    .navbar { flex-wrap: wrap; }
+    .navbar a { font-size: 0.7rem; padding: 8px 12px; }
+    .masthead-flag { font-size: 2.8rem; }
+    .classifieds-grid { grid-template-columns: 1fr 1fr; }
+    .topbar { flex-direction: column; gap: 2px; }
+    .timeline-item { grid-template-columns: 60px 16px 1fr; }
+  }
+
+  /* Fade-in animation */
+  .newspaper { animation: fadeIn 0.8s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+
+<body>
+<div class="newspaper">
+<div class="content-wrap">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span class="topbar-motto">"All The News That's Fit To Code"</span>
+    <span>✦ Tuesday, 17th March, 2026 ✦</span>
+    <span class="topbar-price">Vol. VII, No. 42 &nbsp;·&nbsp; Est. 2019</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-rule-top"></div>
+    <div class="masthead-rule-thin"></div>
+    <div class="masthead-flag">The Portfolio Gazette</div>
+    <div class="masthead-tagline">Dispatches from the Frontier of Digital Craft</div>
+    <div class="masthead-meta">
+      <span class="masthead-edition">Late City Edition</span>
+      <span>— Published Every Sprint —</span>
+      <span>Price: Your Attention</span>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       PAGE ONE — FRONT PAGE
+  ═══════════════════════════════════════ -->
+  <section class="page" id="about">
+
+    <!-- Section Label -->
+    <div class="section-label" style="margin-bottom:18px;">
+      <span class="section-label-rule"></span>
+      <span class="section-label-text">Front Page</span>
+      <span class="section-label-rule"></span>
+    </div>
+
+    <!-- Main Headline -->
+    <div class="front-headline">
+      <span class="kicker">Breaking News · Talent & Technology</span>
+      <h1 class="headline-main">Local Developer Stuns World<br>With Extraordinary Portfolio</h1>
+      <p class="headline-deck">Full-stack engineer combines artistry with engineering in what critics are calling "the most remarkable body of work since the invention of the semicolon."</p>
+    </div>
+
+    <!-- 3-Column Grid -->
+    <div class="col-grid col-grid-3">
+      <!-- COL 1 -->
+      <div class="col">
+        <p class="byline">By Our Digital Correspondent · Nashik Bureau</p>
+        <p class="body-text dropcap">Sources close to the development community confirmed late Tuesday that one Alex Morgan, a full-stack engineer of considerable renown, has assembled a portfolio of work so impressive that senior colleagues were left temporarily speechless upon first viewing.</p>
+        <p class="body-text">"We knew they were talented," confided one anonymous colleague, "but this—" they gestured broadly at the screen, "—this is something else entirely." The developer in question reportedly responded to praise with characteristic modesty, immediately opening a new terminal window.</p>
+        <div class="notices-box" data-title="At A Glance">
+          <div class="skill-row"><span>Open to Work</span><span style="color:var(--accent);">✓ Yes</span></div>
+          <div class="skill-row"><span>Location</span><span>Nashik, IN</span></div>
+          <div class="skill-row"><span>Speciality</span><span>Full-Stack</span></div>
+          <div class="skill-row"><span>Experience</span><span>5+ Years</span></div>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <!-- COL 2 — AVATAR + STATS -->
+      <div class="col" style="text-align:center;">
+        <div class="avatar-frame">🧑‍💻</div>
+        <p class="subhead" style="text-align:center; margin-bottom:4px;">Alex Morgan</p>
+        <p style="font-family:'IM Fell English', serif; font-size:0.8rem; font-style:italic; text-align:center; margin-bottom:12px;">Full-Stack Engineer & Digital Artisan</p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Years</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12k</span>
+            <span class="stat-label">Commits</span>
+          </div>
+        </div>
+        <div class="pull-quote">
+          <p>"Code is craft. Every line a sentence, every function a paragraph."</p>
+          <cite>— Alex Morgan</cite>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <!-- COL 3 -->
+      <div class="col">
+        <p class="subhead">Developer Linked to No Less Than Fourteen Award-Winning Products</p>
+        <p class="byline">Special Report — 17 March 2026</p>
+        <p class="body-text">Investigations by this paper have revealed that the developer behind the portfolio has, over a career spanning half a decade, contributed meaningfully to projects serving millions of users across four continents.</p>
+        <p class="body-text">A close reading of commit histories and release notes suggests a philosophy of "ship early, refactor always"—a doctrine that has earned both admiration and the occasional raised eyebrow in standup meetings.</p>
+        <div class="photo-box">
+          <div style="background:var(--paper-dark); height:100px; display:flex; align-items:center; justify-content:center; font-size:2.5rem; filter:sepia(40%);">💻</div>
+          <p class="photo-caption">The developer's workstation, photographed for this publication. The coffee is always present.</p>
+        </div>
+      </div>
+    </div><!-- /.col-grid-3 -->
+
+  </section>
+
+  <hr class="section-break-thick">
+
+  <!-- ═══════════════════════════════════════
+       PAGE TWO — SKILLS
+  ═══════════════════════════════════════ -->
+  <section class="page" id="skills">
+
+    <div class="section-label" style="margin-bottom:18px;">
+      <span class="section-label-rule"></span>
+      <span class="section-label-text">Skills & Repertoire</span>
+      <span class="section-label-rule"></span>
+    </div>
+
+    <h2 class="headline-main" style="font-size:2rem; margin-bottom:14px; text-align:center;">
+      Comprehensive Catalogue of Technical Abilities Presented for Public Inspection
+    </h2>
+
+    <div class="col-grid col-grid-3">
+      <div class="col">
+        <p class="subhead">Front-End Arts</p>
+        <div class="notices-box" data-title="Client-Side">
+          <div class="skill-row">
+            <span>React / Next.js</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:95%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>TypeScript</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:88%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>CSS / Tailwind</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:92%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>Vue.js</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:75%"></div></div>
+          </div>
+        </div>
+        <p class="body-text">Widely regarded as possessing a rare gift for translating complex user requirements into interfaces of uncommon elegance. Pixel-perfection is not a goal but a minimum standard.</p>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="col">
+        <p class="subhead">Back-End Sciences</p>
+        <div class="notices-box" data-title="Server-Side">
+          <div class="skill-row">
+            <span>Node.js / Express</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>Python / Django</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:82%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>PostgreSQL</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:85%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>GraphQL</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:78%"></div></div>
+          </div>
+        </div>
+        <p class="body-text">Systems architecture reviewed by this paper reveals an admirable tendency toward clean separation of concerns and a near-pathological aversion to N+1 queries.</p>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="col">
+        <p class="subhead">Infrastructure & Tools</p>
+        <div class="notices-box" data-title="DevOps">
+          <div class="skill-row">
+            <span>Docker / K8s</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>AWS / GCP</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:76%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>CI/CD Pipelines</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:88%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>Git / GitHub</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:97%"></div></div>
+          </div>
+        </div>
+        <p class="body-text">Infrastructure choices described by one source as "sensibly opinionated." The developer's CI/CD configurations have reportedly never failed in production — a claim this paper has been unable to independently verify, but which we find credible.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="section-break-thick">
+
+  <!-- ═══════════════════════════════════════
+       PAGE THREE — PROJECTS
+  ═══════════════════════════════════════ -->
+  <section class="page" id="projects">
+
+    <div class="section-label" style="margin-bottom:18px;">
+      <span class="section-label-rule"></span>
+      <span class="section-label-text">Notable Works & Enterprises</span>
+      <span class="section-label-rule"></span>
+    </div>
+
+    <h2 class="headline-main" style="font-size:2rem; text-align:center; margin-bottom:6px;">Selected Projects of Public Interest</h2>
+    <p style="text-align:center; font-family:'IM Fell English',serif; font-style:italic; font-size:0.9rem; margin-bottom:20px; opacity:0.7;">A curated examination of enterprises undertaken in the public interest</p>
+
+    <div class="col-grid col-grid-3">
+      <div class="col">
+        <div class="project-card">
+          <div class="project-title">The Commerce Engine</div>
+          <p class="body-text" style="text-align:left;">A full-stack e-commerce platform handling 10,000 concurrent users with a checkout conversion rate that outpaces industry averages by a factor of two.</p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Stripe</span>
+            <span class="tag">Redis</span>
+          </div>
+          <a href="#" class="project-link">Read the full report →</a>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="col">
+        <div class="project-card">
+          <div class="project-title">The Analytics Tribune</div>
+          <p class="body-text" style="text-align:left;">A real-time data dashboard visualising business metrics across 14 integrated data sources, described by its users as "finally, a dashboard we actually check."</p>
+          <div class="project-tags">
+            <span class="tag">D3.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">BigQuery</span>
+          </div>
+          <a href="#" class="project-link">View the exhibit →</a>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="col">
+        <div class="project-card">
+          <div class="project-title">The Collaboration Chronicle</div>
+          <p class="body-text" style="text-align:left;">A collaborative project management tool with real-time sync, used daily by over 500 teams. Notable for its intuitive UX and zero onboarding documentation needed.</p>
+          <div class="project-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+          <a href="#" class="project-link">Inspect the archives →</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="section-break-thick">
+
+  <!-- ═══════════════════════════════════════
+       PAGE FOUR — EXPERIENCE TIMELINE
+  ═══════════════════════════════════════ -->
+  <section class="page" id="experience">
+
+    <div class="section-label" style="margin-bottom:18px;">
+      <span class="section-label-rule"></span>
+      <span class="section-label-text">Historical Record</span>
+      <span class="section-label-rule"></span>
+    </div>
+
+    <div class="col-grid col-grid-2">
+      <div class="col">
+        <h2 class="headline-main" style="font-size:1.8rem; margin-bottom:8px;">A Chronology of Professional Endeavours, Duly Recorded</h2>
+        <p class="byline">Compiled by our Archival Staff</p>
+        <p class="body-text">The following timeline represents a faithful accounting of positions held, responsibilities discharged, and technical achievements accomplished over the course of a distinguished career. We present it here without embellishment, as the facts speak sufficiently for themselves.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-dot-col">
+              <div class="timeline-dot" style="background:var(--ink)"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title">Senior Full-Stack Engineer — TechCorp Inc.</div>
+              <div class="timeline-desc">Led architecture of microservices platform. Managed team of 6. Reduced API latency by 40%.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-dot-col">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title">Full-Stack Developer — StartupXYZ</div>
+              <div class="timeline-desc">Built product from 0 to 100k users. Primary architect of the core data pipeline and frontend design system.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-dot-col">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title">Junior Developer — Digital Agency Co.</div>
+              <div class="timeline-desc">Client-facing web development across diverse industries. Developed a reputation for on-time delivery.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-dot-col">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title">B.Tech Computer Engineering — Pune University</div>
+              <div class="timeline-desc">Graduated with First Class Honours. Final thesis on distributed caching systems awarded department prize.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="col">
+        <p class="subhead">Letters From the Field</p>
+        <p class="byline" style="margin-bottom:12px;">Testimonials · Vol. III</p>
+
+        <div class="letter">
+          "Working with Alex fundamentally changed how our engineering team thinks about code quality and user experience. Every problem received not just a solution but the right solution."
+          <div class="letter-sig">— CEO, TechCorp Inc.</div>
+        </div>
+
+        <div class="letter">
+          "Alex has an almost uncanny ability to understand what users need before they can articulate it themselves. The product they built for us continues to delight our customers years later."
+          <div class="letter-sig">— CTO, StartupXYZ</div>
+        </div>
+
+        <div class="letter">
+          "The combination of technical depth, communication skill, and relentless commitment to craft is, in this writer's experience, exceptionally rare."
+          <div class="letter-sig">— Engineering Manager, Digital Agency Co.</div>
+        </div>
+
+        <div class="ornament-rule">
+          <hr><span>✦ ✦ ✦</span><hr>
+        </div>
+
+        <p class="body-text" style="font-style:italic;">"Certificates and awards are available upon request. References, however, have been known to volunteer themselves unsolicited — a circumstance this paper regards as the highest possible endorsement."</p>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="section-break-thick">
+
+  <!-- ═══════════════════════════════════════
+       PAGE FIVE — CONTACT
+  ═══════════════════════════════════════ -->
+  <section class="page" id="contact">
+
+    <div class="section-label" style="margin-bottom:18px;">
+      <span class="section-label-rule"></span>
+      <span class="section-label-text">Classified Advertisements</span>
+      <span class="section-label-rule"></span>
+    </div>
+
+    <h2 class="headline-main" style="font-size:2rem; text-align:center; margin-bottom:6px;">Establish Communication With This Correspondent</h2>
+    <p style="text-align:center; font-family:'IM Fell English',serif; font-style:italic; font-size:0.9rem; margin-bottom:20px; opacity:0.7;">All enquiries treated with discretion. Response times not guaranteed but typically swift.</p>
+
+    <div class="classifieds-grid">
+      <a class="classified" href="mailto:alex@example.com">
+        <span class="classified-icon">✉</span>
+        <span class="classified-title">Electronic Mail</span>
+        alex@example.com
+      </a>
+      <a class="classified" href="https://github.com" target="_blank">
+        <span class="classified-icon">⌨</span>
+        <span class="classified-title">GitHub</span>
+        github.com/alexmorgan
+      </a>
+      <a class="classified" href="https://linkedin.com" target="_blank">
+        <span class="classified-icon">☎</span>
+        <span class="classified-title">LinkedIn</span>
+        linkedin.com/in/alexmorgan
+      </a>
+      <a class="classified" href="https://twitter.com" target="_blank">
+        <span class="classified-icon">🐦</span>
+        <span class="classified-title">Twitter/X</span>
+        @alexmorgan_dev
+      </a>
+      <a class="classified" href="#" download>
+        <span class="classified-icon">📄</span>
+        <span class="classified-title">Curriculum Vitæ</span>
+        Download PDF
+      </a>
+      <a class="classified" href="tel:+911234567890">
+        <span class="classified-icon">📞</span>
+        <span class="classified-title">Telephone</span>
+        +91 12345 67890
+      </a>
+    </div>
+
+    <div class="pull-quote" style="margin-top:28px;">
+      <p>"The best opportunities begin with a single conversation. This publication encourages all qualified parties to make their enquiries without delay."</p>
+      <cite>— Editorial Board, The Portfolio Gazette</cite>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-ornament">❧ ✦ ❧</div>
+    <p>THE PORTFOLIO GAZETTE is published continuously. All rights reserved. Unauthorised reproduction of the developer's work is prohibited by common decency if not by law.</p>
+    <div class="footer-ornament">─── ✦ ───</div>
+    <p>Offices: Nashik, Maharashtra, India &nbsp;·&nbsp; Printed on Recycled Electrons &nbsp;·&nbsp; Est. 2019</p>
+  </footer>
+
+</div><!-- /.content-wrap -->
+</div><!-- /.newspaper -->
+</body>
+</html>
