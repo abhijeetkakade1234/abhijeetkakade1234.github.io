@@ -168,13 +168,30 @@
   "publications": {
     "blogsTitle": "The Technical Times: Periodicals",
     "url": "https://blogs.abhijeetkakade.in/",
-    "description": "Abhijeet maintains a regular cadence of technical dispatches, exploring the intersection of modern web architectures and decentralised systems."
+    "description": "Abhijeet maintains a regular cadence of technical dispatches, exploring the intersection of modern web architectures and decentralised systems.",
+    "recentDispatches": [
+      {
+        "title": "The Case of the Clogged Backend",
+        "insight": "A slow React frontend mystery solved: Why sometimes the UI isn't slow, it's just waiting for the backend to breathe.",
+        "url": "https://blogs.abhijeetkakade.in/posts/why-was-my-frontend-so-slow"
+      },
+      {
+        "title": "Automation Without Guardrails",
+        "insight": "39 deployment loops and one major realization: Why even AI-powered 'vibe coding' requires rigorous structure and CI/CD.",
+        "url": "https://blogs.abhijeetkakade.in/posts/vibe-coding-with-ai"
+      },
+      {
+        "title": "The Paradox of the Local Machine",
+        "insight": "Investigating why code that 'works on my machine' fails in dev—and the devious database schema differences behind it.",
+        "url": "https://blogs.abhijeetkakade.in/posts/it-works-on-my-machine"
+      }
+    ]
   },
   "photography": {
     "title": "Sunday Supplement: Light & Shadow",
     "subtitle": "A collection of moments captured via mobile lens",
     "instagram": "https://www.instagram.com/_abhi.clicks/",
-    "samples": []
+    "samples": ["/IMG_20250901_092558378_HDR.jpg"]
   },
   "contact": {
     "email": "abhijeetskakade04@gmail.com",

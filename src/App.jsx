@@ -11,6 +11,21 @@ import data from './data/portfolioData.json';
 function App() {
   const { personalInfo, about, techStack, projects, experience, contact, quotes, publications, photography } = data;
   const [view, setView] = useState({ type: 'home', data: null });
+  const [scrollTarget, setScrollTarget] = useState(null);
+
+  React.useEffect(() => {
+    if (view.type === 'home' && scrollTarget) {
+      if (scrollTarget === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(scrollTarget);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      setScrollTarget(null);
+    }
+  }, [view, scrollTarget]);
 
   const handleReadMore = (project) => {
     setView({ type: 'project', data: project });
@@ -27,14 +42,17 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  const handleBack = () => {
+  const handleBack = (sectionId = null) => {
     setView({ type: 'home', data: null });
-    window.scrollTo(0, 0);
+    setScrollTarget(sectionId || 'top');
   };
 
-  const handleNavigate = (target) => {
-    if (target === 'archives') handleArchives();
-    else handleBack();
+  const handleNavigate = (target, sectionId = null) => {
+    if (target === 'archives') {
+      handleArchives();
+    } else {
+      handleBack(sectionId);
+    }
   };
 
   return (
@@ -94,10 +112,15 @@ function App() {
               <div className="col-divider"></div>
               <div className="col">
                 <p className="subhead">{publications.blogsTitle}</p>
-                <p className="body-text" style={{ fontStyle: 'italic', marginBottom: '15px' }}>
-                  {publications.description}
-                </p>
-                <div style={{ textAlign: 'center', marginBottom: '15px' }}>
+                <div className="dispatches-list">
+                  {publications.recentDispatches.map((dispatch, idx) => (
+                    <a key={idx} href={dispatch.url} target="_blank" rel="noreferrer" className="dispatch-item" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                      <p className="dispatch-title">{dispatch.title}</p>
+                      <p className="dispatch-insight">{dispatch.insight}</p>
+                    </a>
+                  ))}
+                </div>
+                <div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
                    <a href={publications.url} target="_blank" rel="noreferrer" className="project-link">Read Full Periodicals →</a>
                 </div>
                 <div className="photo-box">

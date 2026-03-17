@@ -1,15 +1,10 @@
 import React from 'react';
 
 const NewspaperLayout = ({ children, onNavigate }) => {
-  const handleNavClick = (e, target) => {
+  const handleNavClick = (e, target, sectionId = null) => {
     if (onNavigate) {
-      if (target === 'archives') {
-        e.preventDefault();
-        onNavigate('archives');
-      } else if (target === 'home') {
-        e.preventDefault();
-        onNavigate('home');
-      }
+      e.preventDefault();
+      onNavigate(target, sectionId);
     }
   };
 
@@ -37,11 +32,11 @@ const NewspaperLayout = ({ children, onNavigate }) => {
         </header>
 
         <nav className="navbar">
-          <a href="#about" onClick={(e) => handleNavClick(e, 'home')}>Home</a>
-          <a href="#skills" onClick={(e) => handleNavClick(e, 'home')}>Skills</a>
+          <a href="#about" onClick={(e) => handleNavClick(e, 'home', 'top')}>Home</a>
+          <a href="#skills" onClick={(e) => handleNavClick(e, 'home', 'skills')}>Skills</a>
           <a href="#projects" onClick={(e) => handleNavClick(e, 'archives')}>Archives</a>
-          <a href="#experience" onClick={(e) => handleNavClick(e, 'home')}>Experience</a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, 'home')}>Contact</a>
+          <a href="#experience" onClick={(e) => handleNavClick(e, 'home', 'experience')}>Experience</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'home', 'contact')}>Contact</a>
         </nav>
 
         {children}
@@ -50,7 +45,7 @@ const NewspaperLayout = ({ children, onNavigate }) => {
           <div className="footer-ornament">❧ ✦ ❧</div>
           <p>THE PORTFOLIO GAZETTE is published continuously. All rights reserved. Unauthorised reproduction of the developer's work is prohibited by common decency if not by law.</p>
           <div className="footer-ornament">─── ✦ ───</div>
-          <p>Offices: Nashik, Maharashtra, India &nbsp;·&nbsp; Printed on Recycled Electrons &nbsp;·&nbsp; Est. 2019</p>
+          <p>Global Dispatch &nbsp;·&nbsp; Printed on Recycled Electrons &nbsp;·&nbsp; Est. 2019</p>
         </footer>
       </div>
     </div>
