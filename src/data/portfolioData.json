@@ -1,0 +1,193 @@
+{
+  "personalInfo": {
+    "name": "Abhijeet Kakade",
+    "role": "Web3 Pioneer & Full-Stack Developer",
+    "location": "Nashik, IN",
+    "education": "BE CSE (2026)",
+    "currentRole": "Intern @ AI Alpha Tech",
+    "awards": 1,
+    "openToWork": true,
+    "cvUrl": "/CV.pdf",
+    "avatarGif": "/1000060511.jpg"
+  },
+  "about": {
+    "kicker": "Breaking News · Talent & Technology",
+    "headline": "Web3 Pioneer Stuns World With Autonomous Agent Breakthrough",
+    "deck": "Abhijeet Kakade, an intern at AI Alpha Tech, bridges the gap between AI and Blockchain with winning hackathon entries.",
+    "byline": "By Our Digital Correspondent · Nashik Bureau",
+    "body": [
+      "Sources close to the development community confirmed late Tuesday that one Abhijeet Kakade, a Web3 developer of considerable renown, has assembled a portfolio of work so impressive that senior colleagues were left temporarily speechless.",
+      "Specializing in autonomous agents and gasless Web3 experiences, Kakade has already made waves with 'OnlyPngs', a hackathon-winning project that leverages Account Abstraction and LLMs.",
+      "My mission is to simplify complex blockchain interactions using natural language."
+    ]
+  },
+  "techStack": [
+    { "name": "React / Vite", "level": "Expert" },
+    { "name": "Solidity / Web3", "level": "Advanced" },
+    { "name": "Node.js / Express", "level": "Senior" },
+    { "name": "AI / LLM Integration", "level": "Pioneer" }
+  ],
+  "projects": [
+    {
+      "title": "AVAXVERSE",
+      "slug": "avaxverse",
+      "category": "Web3 / Freelance Ecosystem",
+      "date": "2026",
+      "techStack": "Next.js (React 19), TypeScript, Tailwind CSS v4, Solidity, Avalanche, Wagmi",
+      "description": "A decentralized super app and trust protocol for the Avalanche ecosystem, revolutionizing the freelance economy with trustless identity and reputation systems.",
+      "features": [
+        "Identity Registry (DID): Decentralized ID system for verifiable user profiles.",
+        "Reputation Token (SBT): Soulbound Tokens representing immutable user credibility.",
+        "Escrow Protocol: Secure, trustless payments for decentralized freelance services.",
+        "Professional Court: Community-driven juror system for resolving on-chain disputes.",
+        "Reputation-Weighted Voting: Governance power scaled by contribution and credibility."
+      ],
+      "url": "https://github.com/abhijeetkakade1234/AVAXVERSE"
+    },
+    {
+      "title": "OnlyPngs",
+      "slug": "onlypngs",
+      "category": "Web3 / AI",
+      "date": "4 February, 2026",
+      "techStack": "Avalanche, Gemini 2.0 Flash, 0xgasless AgentKit, ERC-4337",
+      "description": "An AI-powered, non-custodial NFT trading platform enabling automated, gasless transactions. Winner of 2:47PM Studio Hackathon.",
+      "features": [
+        "The Sleeping Buy: Autonomous monitoring system that executes trades based on price alerts while offline.",
+        "Gasless UI/UX: Completely gas-free experience via 0xgasless Paymaster-funded transactions.",
+        "Natural Language Interface: Uses Gemini 2.0 to translate human intent into on-chain actions.",
+        "Security First: Architected using Smart Accounts and session keys for non-custodial control."
+      ],
+      "url": "#"
+    },
+    {
+      "title": "Fuji",
+      "slug": "fuji",
+      "category": "AI / Dev Tools",
+      "date": "January, 2026",
+      "techStack": "Gemma 3, Node.js",
+      "description": "A specialized AI Insight Engine designed as an intelligence layer for autonomous coding agents.",
+      "features": [
+        "Built for Agents: Generates insights in TOON format (optimized for LLMs) with [ACTIONABLE] tags.",
+        "5-Stage Pipeline: Static, Symbol, Diff Isolation, AI-Critic, and Supervise stages for thorough analysis.",
+        "Kyoto Night Aesthetic: Custom terminal theme with Sakura Pink, Matcha Green, and Wisteria Purple."
+      ],
+      "url": "#"
+    },
+    {
+      "title": "Kimiko (キミコ)",
+      "slug": "kimiko",
+      "category": "Privacy / Web3",
+      "date": "4 February, 2026",
+      "techStack": "Solana, Inco Lightning (FHE), Next.js 14",
+      "description": "High-end wallet analysis engine and compliance toolkit for Solana focusing on 'Selective Visibility'.",
+      "features": [
+        "Privacy Scoring: Quantifies on-chain traceability and detects leakage vectors.",
+        "Inco Shield (FHE): Uses Fully Homomorphic Encryption for trustless, encrypted identity attestations.",
+        "Behavioral Compliance: Verifies users based on historical behavior rather than traditional KYC.",
+        "Zen Interface: Tactical 'Digital Zen' HUD for human-readable risk assessments."
+      ],
+      "url": "#"
+    },
+    {
+      "title": "YAMI (闇)",
+      "slug": "yami",
+      "category": "Privacy / Solana",
+      "date": "4 February, 2026",
+      "techStack": "Next.js 14, SPL Token 2022",
+      "description": "Premium, backendless privacy layer for the Solana ecosystem featuring confidential transfers.",
+      "features": [
+        "Confidential Transfers: Native Token-2022 extensions for encrypted balances.",
+        "ShadowWire Integration: High-fidelity ZK experience simulating internal 'Shadow Ledger' states.",
+        "LocalStorage Obfuscation: XOR-based masking to secure sensitive history locally without a backend.",
+        "Real-time Auditing: Integrated health monitoring for Solana Devnet nodes."
+      ],
+      "url": "#"
+    },
+    {
+      "title": "CodeNap",
+      "slug": "codenap",
+      "category": "Chrome Extension",
+      "date": "12 April 2026",
+      "techStack": "Javascript, Chrome API",
+      "description": "Productivity extension that provides mindful reminders to take breaks, stand up, and hydrate.",
+      "features": [
+        "Mindful Reminders: Customizable alerts for health breaks.",
+        "Stand Up & Hydrate: Specialized modes for physical well-being during coding.",
+        "Adobe Firefly Assets: High-quality, AI-generated visual design."
+      ],
+      "url": "https://chromewebstore.google.com/detail/codenap/cngpijpkdmnlgljdkljbggmoidcifhan"
+    },
+    {
+      "title": "Quick-Scroll",
+      "slug": "quick-scroll",
+      "category": "Chrome Extension",
+      "date": "30 June 2026",
+      "techStack": "Javascript, Chrome API",
+      "description": "Navigation tool allowing users to scroll to top (single click) or bottom (double click) instantly.",
+      "features": [
+        "Single-Click Top: Instant navigation to the start of long pages.",
+        "Double-Click Bottom: Quick leap to the footer/end of content.",
+        "Lightweight: Minimal footprint for lightning-fast performance."
+      ],
+      "url": "https://chromewebstore.google.com/detail/quick-scroll/idffbgckggkngblpdmobfknajodlcbhk"
+    },
+    {
+      "title": "GCOERC Cosa Website",
+      "slug": "cosa-website",
+      "category": "Website",
+      "date": "24th March, 2025",
+      "techStack": "React, Tailwind, Node.js",
+      "description": "Official website for the Guru Gobind Singh College Of Engineering Computer Engineering Student Association (COSA).",
+      "features": [
+        "Association Portal: Central hub for COSA events and student resources.",
+        "Rich Media: Visual documentation of association activities.",
+        "Performance Optimized: Built for accessibility across the campus network."
+      ],
+      "url": "https://cosagcoerc.com/"
+    },
+    {
+      "title": "Previous Portfolio",
+      "slug": "previous-portfolio",
+      "category": "Website",
+      "date": "16 September, 2026",
+      "techStack": "HTML, CSS, GSAP",
+      "description": "Personal portfolio demonstrating mobile and web development skills with advanced animations.",
+      "features": [
+        "GSAP Animations: High-fidelity motion design across all sections.",
+        "Mobile First: Completely responsive design for every viewport.",
+        "Interactive Storytelling: Engaging user journey through developer history."
+      ],
+      "url": "#"
+    }
+  ],
+  "experience": [
+    { "year": "2025-26", "title": "Full Stack Developer (Intern) — AI Alpha Tech", "desc": "Contributed for 6 months as a full-stack developer, specializing in high-performance integration layers, autonomous agent development, and Web3 infrastructure." },
+    { "year": "2025-26", "title": "Independent Technical Consultant", "desc": "Consulting on high-performance React architectures, SEO, and full-stack solutions for diverse clients." },
+    { "year": "2023-26", "title": "Computer Engineering — GCOERC", "desc": "Studying at GCOERC, focusing on advanced algorithm design, decentralised systems, and high-impact software engineering." }
+  ],
+  "publications": {
+    "blogsTitle": "The Technical Times: Periodicals",
+    "url": "https://blogs.abhijeetkakade.in/",
+    "description": "Abhijeet maintains a regular cadence of technical dispatches, exploring the intersection of modern web architectures and decentralised systems."
+  },
+  "photography": {
+    "title": "Sunday Supplement: Light & Shadow",
+    "subtitle": "A collection of moments captured via mobile lens",
+    "instagram": "https://www.instagram.com/_abhi.clicks/",
+    "samples": []
+  },
+  "contact": {
+    "email": "abhijeetskakade04@gmail.com",
+    "github": "https://github.com/abhijeetkakade1234",
+    "linkedin": "https://www.linkedin.com/in/abhijeet-kakade-384a9a253",
+    "twitter": "https://x.com/AbhijeetKakade0",
+    "instagram": "https://www.instagram.com/_abhi.clicks/",
+    "blogs": "https://blogs.abhijeetkakade.in/"
+  },
+  "quotes": [
+    {
+      "text": "The best way to predict the future of Web3 is to build the agents that will navigate it.",
+      "author": "Abhijeet Kakade"
+    }
+  ]
+}

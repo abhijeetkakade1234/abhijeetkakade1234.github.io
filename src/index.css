@@ -1,0 +1,727 @@
+:root {
+  --ink: #1a1008;
+  --ink-light: #2e1f0e;
+  --paper: #f0e6c8;
+  --paper-dark: #d9c89e;
+  --paper-darker: #c4ae82;
+  --accent: #8b1a1a;
+  --rule: #1a1008;
+  --shadow: rgba(26,16,8,0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #b8a070;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(0,0,0,0.03) 28px, rgba(0,0,0,0.03) 29px),
+    repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(0,0,0,0.03) 28px, rgba(0,0,0,0.03) 29px);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 20px 12px 40px;
+}
+
+/* ── PAPER TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ══════════════════════════════════════════
+   NEWSPAPER WRAPPER
+══════════════════════════════════════════ */
+.newspaper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--paper);
+  box-shadow: 0 4px 6px var(--shadow), 0 10px 40px rgba(0,0,0,0.35), inset 0 0 80px rgba(180,140,60,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aged edges */
+.newspaper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(80,50,10,0.18) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 0%, rgba(80,50,10,0.14) 0%, transparent 40%),
+    radial-gradient(ellipse at 0% 100%, rgba(80,50,10,0.2) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 100%, rgba(80,50,10,0.18) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content-wrap { position: relative; z-index: 2; }
+
+/* ══════════════════════════════════════════
+   TOP BAR
+══════════════════════════════════════════ */
+.topbar {
+  border-bottom: 1px solid var(--ink);
+  padding: 6px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+.topbar-motto { font-style: italic; }
+.topbar-price { font-style: normal; }
+
+/* ══════════════════════════════════════════
+   MASTHEAD
+══════════════════════════════════════════ */
+.masthead {
+  padding: 18px 28px 14px;
+  text-align: center;
+  border-bottom: 3px double var(--ink);
+  position: relative;
+}
+
+.masthead-rule-top {
+  height: 4px;
+  background: var(--ink);
+  margin-bottom: 3px;
+}
+.masthead-rule-thin {
+  height: 1px;
+  background: var(--ink);
+  margin-bottom: 14px;
+}
+
+.masthead-flag {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+}
+
+.masthead-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.75rem;
+  margin-top: 6px;
+  padding: 6px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.masthead-edition { font-style: italic; }
+.masthead-tagline {
+  font-size: 0.85rem;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  color: var(--ink-light);
+}
+
+/* ══════════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════════ */
+.navbar {
+  border-bottom: 3px solid var(--ink);
+  padding: 0;
+  background: var(--ink);
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.navbar a {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper);
+  text-decoration: none;
+  padding: 9px 20px;
+  transition: background 0.2s, color 0.2s;
+  border-right: 1px solid rgba(240,230,200,0.2);
+  position: relative;
+}
+
+.navbar a:first-child { border-left: 1px solid rgba(240,230,200,0.2); }
+
+.navbar a:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.navbar a::after {
+  content: '✦';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5rem;
+  color: rgba(240,230,200,0.3);
+}
+.navbar a:last-child::after { display: none; }
+
+/* ══════════════════════════════════════════
+   SECTION LABEL
+══════════════════════════════════════════ */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 28px;
+  margin: 0;
+}
+
+.section-label-text {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3px 14px;
+  white-space: nowrap;
+}
+
+.section-label-rule {
+  height: 1px;
+  background: var(--ink);
+  flex: 1;
+}
+
+/* ══════════════════════════════════════════
+   MAIN PAGES / SECTIONS
+══════════════════════════════════════════ */
+.page { padding: 22px 28px 28px; }
+
+.front-headline {
+  text-align: center;
+  padding: 20px 0 14px;
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 18px;
+}
+
+.kicker {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.headline-main {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.headline-deck {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* COLUMN GRID */
+.col-grid { display: grid; gap: 0; }
+.col-grid-3 { grid-template-columns: 1fr 1px 1fr 1px 1fr; }
+.col-grid-2 { grid-template-columns: 2fr 1px 1fr; }
+.col-grid-2-eq { grid-template-columns: 1fr 1px 1fr; }
+
+.col-divider { background: var(--ink); opacity: 0.35; margin: 0 0px; }
+
+.col { padding: 0 22px; }
+.col:first-child { padding-left: 0; }
+.col:last-child { padding-right: 0; }
+
+/* Drop cap */
+.dropcap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.2em;
+  font-weight: 900;
+  float: left;
+  line-height: 0.72;
+  margin: 4px 8px -4px 0;
+  color: var(--ink);
+}
+
+p.body-text {
+  font-size: 0.88rem;
+  line-height: 1.72;
+  margin-bottom: 10px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.byline {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin: 6px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(26,16,8,0.25);
+}
+
+/* ── SUBHEADLINE ── */
+.subhead {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.subhead-sm {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+/* PHOTO PLACEHOLDER */
+.photo-box {
+  border: 1px solid var(--ink);
+  margin: 12px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-box img {
+  width: 100%;
+  display: block;
+  filter: sepia(60%) contrast(1.1) brightness(0.95);
+}
+
+.photo-caption {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.7rem;
+  font-style: italic;
+  padding: 4px 8px;
+  border-top: 1px solid var(--ink);
+  background: rgba(26,16,8,0.04);
+  text-align: center;
+}
+
+/* RULE ORNAMENTAL */
+.ornament-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+.ornament-rule hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid var(--ink);
+  opacity: 0.5;
+}
+.ornament-rule span {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════════════════
+   SKILLS BOX — "NOTICES"
+══════════════════════════════════════════ */
+.notices-box {
+  border: 2px solid var(--ink);
+  padding: 14px 16px;
+  margin: 14px 0;
+  position: relative;
+}
+
+.notices-box::before {
+  content: attr(data-title);
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--paper);
+  padding: 0 8px;
+  position: absolute;
+  top: -10px;
+  left: 14px;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.8rem;
+  padding: 5px 0;
+  border-bottom: 1px dotted rgba(26,16,8,0.3);
+}
+.skill-row:last-child { border-bottom: none; }
+
+.skill-bar-outer {
+  width: 120px;
+  height: 6px;
+  border: 1px solid var(--ink);
+  background: rgba(26,16,8,0.05);
+  position: relative;
+}
+.skill-bar-inner {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--ink);
+}
+
+/* ══════════════════════════════════════════
+   PROJECTS — "ADVERTISEMENTS"
+══════════════════════════════════════════ */
+.project-card {
+  border: 2px solid var(--ink);
+  padding: 16px;
+  margin: 12px 0;
+  position: relative;
+  background: rgba(26,16,8,0.02);
+  transition: box-shadow 0.2s;
+}
+
+.project-card:hover {
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: translate(-2px,-2px);
+  transition: all 0.15s;
+}
+
+.project-card::before {
+  content: '— ADVERTISEMENT —';
+  font-family: 'IM Fell English', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(26,16,8,0.4);
+  display: block;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 6px 0;
+  margin-bottom: 10px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+  justify-content: center;
+}
+
+.tag {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  padding: 2px 8px;
+}
+
+.project-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS — "LETTERS TO THE EDITOR"
+══════════════════════════════════════════ */
+.letter {
+  border-left: 3px solid var(--ink);
+  padding: 10px 14px;
+  margin: 14px 0;
+  background: rgba(26,16,8,0.03);
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.letter-sig {
+  font-style: normal;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  margin-top: 8px;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════
+   CONTACT — "CLASSIFIED ADS"
+══════════════════════════════════════════ */
+.classifieds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.classified {
+  border: 1px solid var(--ink);
+  padding: 12px;
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  background: none;
+}
+
+.classified:hover { background: var(--ink); color: var(--paper); }
+
+.classified-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.classified-title {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  display: block;
+  margin-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+}
+
+/* ══════════════════════════════════════════
+   TIMELINE — "HISTORICAL RECORD"
+══════════════════════════════════════════ */
+.timeline { margin: 10px 0; }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 20px 1fr;
+  gap: 0 12px;
+  margin-bottom: 14px;
+  align-items: start;
+}
+
+.timeline-year {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-align: right;
+  color: var(--ink-light);
+  padding-top: 2px;
+}
+
+.timeline-dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  flex: 1;
+  width: 1px;
+  background: var(--ink);
+  opacity: 0.3;
+  min-height: 30px;
+}
+
+.timeline-content { padding-bottom: 4px; }
+
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.timeline-desc {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.footer {
+  border-top: 3px double var(--ink);
+  padding: 16px 28px;
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  font-style: italic;
+  color: var(--ink-light);
+  background: rgba(26,16,8,0.03);
+}
+
+.footer-ornament {
+  margin: 6px 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+  opacity: 0.5;
+}
+
+/* ══════════════════════════════════════════
+   SECTION DIVIDERS
+══════════════════════════════════════════ */
+.section-break {
+  border: none;
+  border-top: 1px solid var(--ink);
+  margin: 0;
+  opacity: 0.4;
+}
+
+.section-break-thick {
+  border: none;
+  border-top: 3px double var(--ink);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   PULL QUOTE
+══════════════════════════════════════════ */
+.pull-quote {
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  padding: 16px 0;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.pull-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.pull-quote cite {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════════════════
+   AVATAR CIRCLE
+══════════════════════════════════════════ */
+.avatar-frame {
+  width: 140px;
+  height: 140px;
+  border: 4px solid var(--ink);
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 14px;
+  box-shadow: 6px 6px 0 var(--paper-darker);
+  background: var(--paper-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: sepia(30%);
+  position: relative;
+}
+
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ══════════════════════════════════════════
+   NUMBERS / STATS TICKER
+══════════════════════════════════════════ */
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--ink);
+  border-bottom: 3px double var(--ink);
+  padding: 12px 0;
+  margin: 16px 0;
+}
+
+.stat-item { text-align: center; }
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 4px;
+  opacity: 0.65;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  body { padding: 10px 4px 30px; }
+  .col-grid-3, .col-grid-2 { grid-template-columns: 1fr; }
+  .col-divider { height: 1px; width: 100%; margin: 0; }
+  .col { padding: 0; margin-bottom: 18px; }
+  .navbar { flex-wrap: wrap; }
+  .navbar a { font-size: 0.7rem; padding: 8px 12px; }
+  .masthead-flag { font-size: 2.8rem; }
+  .classifieds-grid { grid-template-columns: 1fr 1fr; }
+  .topbar { flex-direction: column; gap: 2px; }
+  .timeline-item { grid-template-columns: 60px 16px 1fr; }
+}
+
+/* Fade-in animation */
+.newspaper { animation: fadeIn 0.8s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
