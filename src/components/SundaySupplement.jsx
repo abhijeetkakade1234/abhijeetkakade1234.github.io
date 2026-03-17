@@ -45,10 +45,14 @@ const SundaySupplement = ({ photography, onBack }) => {
         <div className="col-divider"></div>
         <div className="col">
            <div className="photo-box">
-              <div style={{ background: 'var(--paper-dark)', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '4rem', filter: 'sepia(40%)' }}>
-                📸
-              </div>
-              <p className="photo-caption">Sample Landscape — [Awaiting high-resolution plates from the editorial board]</p>
+              {photography.samples && photography.samples.length > 0 ? (
+                <img src={photography.samples[0]} alt="Landscape Exhibit" style={{ width: '100%', display: 'block' }} />
+              ) : (
+                <div style={{ background: 'var(--paper-dark)', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '4rem', filter: 'sepia(40%)' }}>
+                  📸
+                </div>
+              )}
+              <p className="photo-caption">{photography.samples && photography.samples.length > 0 ? "Featured Exhibit — Light & Shadow Study" : "Sample Landscape — [Awaiting high-resolution plates from the editorial board]"}</p>
            </div>
         </div>
         <div className="col-divider"></div>

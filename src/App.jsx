@@ -11,6 +11,21 @@ import data from './data/portfolioData.json';
 function App() {
   const { personalInfo, about, techStack, projects, experience, contact, quotes, publications, photography } = data;
   const [view, setView] = useState({ type: 'home', data: null });
+  const [scrollTarget, setScrollTarget] = useState(null);
+
+  React.useEffect(() => {
+    if (view.type === 'home' && scrollTarget) {
+      if (scrollTarget === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(scrollTarget);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      setScrollTarget(null);
+    }
+  }, [view, scrollTarget]);
 
   const handleReadMore = (project) => {
     setView({ type: 'project', data: project });
@@ -27,14 +42,17 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  const handleBack = () => {
+  const handleBack = (sectionId = null) => {
     setView({ type: 'home', data: null });
-    window.scrollTo(0, 0);
+    setScrollTarget(sectionId || 'top');
   };
 
-  const handleNavigate = (target) => {
-    if (target === 'archives') handleArchives();
-    else handleBack();
+  const handleNavigate = (target, sectionId = null) => {
+    if (target === 'archives') {
+      handleArchives();
+    } else {
+      handleBack(sectionId);
+    }
   };
 
   return (
