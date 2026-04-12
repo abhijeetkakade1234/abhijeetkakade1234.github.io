@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 const SkillBox = ({ title, skills }) => {
@@ -19,3 +20,4 @@ const SkillBox = ({ title, skills }) => {
 };
 
 export default SkillBox;
+

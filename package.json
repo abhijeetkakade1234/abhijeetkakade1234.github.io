@@ -1,24 +1,20 @@
 {
-  "name": "abhijeetkakade1234.github.io",
+  "name": "next-app",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.13.1"
+    "next": "16.2.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "gh-pages": "^6.1.1",
-    "vite": "^5.4.1"
+    "eslint": "^9",
+    "eslint-config-next": "16.2.3"
   }
 }

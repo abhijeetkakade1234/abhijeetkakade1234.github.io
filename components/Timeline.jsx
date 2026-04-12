@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
+import Link from 'next/link';
 
-const TimelineItem = ({ item, isLast, onReadMore }) => {
+const TimelineItem = ({ item, isLast }) => {
   const isSpecial = !!item.details;
   
   return (
@@ -14,36 +16,33 @@ const TimelineItem = ({ item, isLast, onReadMore }) => {
         <h4 className="timeline-title">{item.title}</h4>
         <p className="timeline-desc">{item.desc}</p>
         
-        {isSpecial && onReadMore && (
-          <button 
-            onClick={() => onReadMore(item)}
+        {isSpecial && (
+          <Link 
+            href={`/experience/${item.slug}`}
             className="project-link"
             style={{ 
               fontSize: '0.72rem', 
               marginTop: '8px', 
-              background: 'none', 
-              border: 'none', 
-              padding: 0, 
-              cursor: 'pointer',
               display: 'inline-block'
             }}
           >
             Read Special Supplement →
-          </button>
+          </Link>
         )}
       </div>
     </div>
   );
 };
 
-const Timeline = ({ items, onReadMore }) => {
+const Timeline = ({ items }) => {
   return (
     <div className="timeline">
       {items.map((item, i) => (
-        <TimelineItem key={i} item={item} onReadMore={onReadMore} isLast={i === items.length - 1} />
+        <TimelineItem key={i} item={item} isLast={i === items.length - 1} />
       ))}
     </div>
   );
 };
 
 export default Timeline;
+

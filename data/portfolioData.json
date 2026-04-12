@@ -219,6 +219,7 @@
   ],
   "experience": [
     { 
+      "slug": "ai-alpha-tech",
       "year": "2025-26", 
       "title": "Full Stack Developer (Intern) — AI Alpha Tech", 
       "desc": "6-month full-stack tenure delivering high-performance UI and backend solutions for industrial SaaS and FinTech platforms.",
@@ -260,8 +261,18 @@
         }
       ]
     },
-    { "year": "2025-26", "title": "Independent Technical Consultant", "desc": "Consulting on high-performance React architectures, SEO, and full-stack solutions for diverse clients." },
-    { "year": "2023-26", "title": "Computer Engineering — GCOERC", "desc": "Studying at GCOERC, focusing on advanced algorithm design, decentralised systems, and high-impact software engineering." }
+    { 
+      "slug": "technical-consultant",
+      "year": "2025-26", 
+      "title": "Independent Technical Consultant", 
+      "desc": "Consulting on high-performance React architectures, SEO, and full-stack solutions for diverse clients." 
+    },
+    { 
+      "slug": "gcoerc",
+      "year": "2023-26", 
+      "title": "Computer Engineering — GCOERC", 
+      "desc": "Studying at GCOERC, focusing on advanced algorithm design, decentralised systems, and high-impact software engineering." 
+    }
   ],
   "publications": {
     "blogsTitle": "The Technical Times: Periodicals",

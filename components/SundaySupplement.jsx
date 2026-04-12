@@ -1,6 +1,8 @@
-import React from 'react';
+'use client';
+import { useRouter } from 'next/navigation';
 
-const SundaySupplement = ({ photography, onBack }) => {
+const SundaySupplement = ({ photography }) => {
+  const router = useRouter();
   return (
     <section className="page animated fadeIn">
       <div className="section-label" style={{ marginBottom: '18px' }}>
@@ -11,7 +13,7 @@ const SundaySupplement = ({ photography, onBack }) => {
 
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <button 
-          onClick={onBack}
+          onClick={() => router.push('/')}
           style={{ 
             fontFamily: "'IM Fell English', serif", 
             fontSize: '0.8rem', 
@@ -75,3 +77,4 @@ const SundaySupplement = ({ photography, onBack }) => {
 };
 
 export default SundaySupplement;
+

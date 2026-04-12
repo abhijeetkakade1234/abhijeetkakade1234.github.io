@@ -1,13 +1,8 @@
+'use client';
 import React from 'react';
+import Link from 'next/link';
 
-const NewspaperLayout = ({ children, onNavigate }) => {
-  const handleNavClick = (e, target, sectionId = null) => {
-    if (onNavigate) {
-      e.preventDefault();
-      onNavigate(target, sectionId);
-    }
-  };
-
+const NewspaperLayout = ({ children }) => {
   return (
     <div className="newspaper">
       <div className="content-wrap">
@@ -20,9 +15,11 @@ const NewspaperLayout = ({ children, onNavigate }) => {
         <header className="masthead">
           <div className="masthead-rule-top"></div>
           <div className="masthead-rule-thin"></div>
-          <div className="masthead-flag" onClick={(e) => handleNavClick(e, 'home')} style={{ cursor: 'pointer' }}>
-            The Portfolio Gazette
-          </div>
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <div className="masthead-flag" style={{ cursor: 'pointer' }}>
+              The Portfolio Gazette
+            </div>
+          </Link>
           <div className="masthead-tagline">Dispatches from the Frontier of Digital Craft</div>
           <div className="masthead-meta">
             <span className="masthead-edition">Late City Edition</span>
@@ -32,11 +29,11 @@ const NewspaperLayout = ({ children, onNavigate }) => {
         </header>
 
         <nav className="navbar">
-          <a href="#about" onClick={(e) => handleNavClick(e, 'home', 'top')}>Home</a>
-          <a href="#skills" onClick={(e) => handleNavClick(e, 'home', 'skills')}>Skills</a>
-          <a href="#projects" onClick={(e) => handleNavClick(e, 'archives')}>Archives</a>
-          <a href="#experience" onClick={(e) => handleNavClick(e, 'home', 'experience')}>Experience</a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, 'home', 'contact')}>Contact</a>
+          <Link href="/#about">Home</Link>
+          <Link href="/#skills">Skills</Link>
+          <Link href="/archives">Archives</Link>
+          <Link href="/#experience">Experience</Link>
+          <Link href="/#contact">Contact</Link>
         </nav>
 
         {children}
@@ -53,3 +50,4 @@ const NewspaperLayout = ({ children, onNavigate }) => {
 };
 
 export default NewspaperLayout;
+
