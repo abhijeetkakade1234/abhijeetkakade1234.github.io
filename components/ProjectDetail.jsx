@@ -1,6 +1,9 @@
+'use client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
-const ProjectDetail = ({ project, onBack }) => {
+const ProjectDetail = ({ project }) => {
+  const router = useRouter();
   if (!project) return null;
 
   return (
@@ -13,7 +16,7 @@ const ProjectDetail = ({ project, onBack }) => {
 
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <button 
-          onClick={onBack}
+          onClick={() => router.back()}
           style={{ 
             fontFamily: "'IM Fell English', serif", 
             fontSize: '0.8rem', 
@@ -84,3 +87,4 @@ const ProjectDetail = ({ project, onBack }) => {
 };
 
 export default ProjectDetail;
+

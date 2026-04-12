@@ -1,6 +1,9 @@
+'use client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
-const ExperienceDetail = ({ item, onBack }) => {
+const ExperienceDetail = ({ item }) => {
+  const router = useRouter();
   if (!item) return null;
 
   return (
@@ -13,7 +16,7 @@ const ExperienceDetail = ({ item, onBack }) => {
 
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <button 
-          onClick={onBack}
+          onClick={() => router.back()}
           style={{ 
             fontFamily: "'IM Fell English', serif", 
             fontSize: '0.8rem', 
@@ -101,3 +104,4 @@ const ExperienceDetail = ({ item, onBack }) => {
 };
 
 export default ExperienceDetail;
+

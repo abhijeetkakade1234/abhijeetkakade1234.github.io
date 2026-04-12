@@ -32,7 +32,7 @@
   ],
   "projects": [
     {
-      "title": "EventPin",
+      "title": "Event Discovery & Booking Platform",
       "slug": "eventpin",
       "category": "SaaS / Full-Stack",
       "date": "2025-26",
@@ -45,7 +45,7 @@
         "Database Architecture: Managed high-performance MariaDB environments for event scaling.",
         "Client Deployment: Handled end-to-end deployment cycles and direct client technical dealing."
       ],
-      "url": "https://app.eventpin.com/"
+      "url": "#"
     },
     {
       "title": "ChairmansSaheb",
@@ -219,18 +219,18 @@
   ],
   "experience": [
     { 
+      "slug": "ai-alpha-tech",
       "year": "2025-26", 
       "title": "Full Stack Developer (Intern) — AI Alpha Tech", 
       "desc": "6-month full-stack tenure delivering high-performance UI and backend solutions for industrial SaaS and FinTech platforms.",
       "details": [
         "Contributed for 6 months as a full-stack developer on SaaS and FinTech platforms.",
-        "Engineered the new React frontend for EventPin and expanded backend services for venues, vendors, and recurring events.",
+        "Engineered the new React frontend for Event Discovery & Booking Platform and expanded backend services for venues, vendors, and recurring events.",
         "Architected the official Tranpoline brand portal with Next.js and the initial payment architecture for ChairmansSaheb using Next.js, Node.js, and MongoDB."
       ],
       "internshipProjects": [
         {
-          "title": "EventPin",
-          "url": "https://app.eventpin.com/",
+          "title": "Event Discovery & Booking Platform",
           "tech": "React, Node.js, MariaDB, Stripe",
           "work": [
             "Architected a new frontend UI with React for an industrial-grade event management SaaS.",
@@ -261,8 +261,18 @@
         }
       ]
     },
-    { "year": "2025-26", "title": "Independent Technical Consultant", "desc": "Consulting on high-performance React architectures, SEO, and full-stack solutions for diverse clients." },
-    { "year": "2023-26", "title": "Computer Engineering — GCOERC", "desc": "Studying at GCOERC, focusing on advanced algorithm design, decentralised systems, and high-impact software engineering." }
+    { 
+      "slug": "technical-consultant",
+      "year": "2025-26", 
+      "title": "Independent Technical Consultant", 
+      "desc": "Consulting on high-performance React architectures, SEO, and full-stack solutions for diverse clients." 
+    },
+    { 
+      "slug": "gcoerc",
+      "year": "2023-26", 
+      "title": "Computer Engineering — GCOERC", 
+      "desc": "Studying at GCOERC, focusing on advanced algorithm design, decentralised systems, and high-impact software engineering." 
+    }
   ],
   "publications": {
     "blogsTitle": "The Technical Times: Periodicals",

@@ -1,7 +1,9 @@
-import React from 'react';
+'use client';
+import { useRouter } from 'next/navigation';
 import ProjectCard from './ProjectCard';
 
-const ProjectArchives = ({ projects, onReadMore, onBack }) => {
+const ProjectArchives = ({ projects }) => {
+  const router = useRouter();
   return (
     <section className="page animated fadeIn">
       <div className="section-label" style={{ marginBottom: '18px' }}>
@@ -12,7 +14,7 @@ const ProjectArchives = ({ projects, onReadMore, onBack }) => {
 
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <button 
-          onClick={onBack}
+          onClick={() => router.push('/')}
           style={{ 
             fontFamily: "'IM Fell English', serif", 
             fontSize: '0.8rem', 
@@ -36,14 +38,14 @@ const ProjectArchives = ({ projects, onReadMore, onBack }) => {
         <div className="col">
            <p className="subhead">Technical Portfolio (A-M)</p>
            {projects.slice(0, Math.ceil(projects.length / 2)).map((p) => (
-             <ProjectCard key={p.slug} {...p} onReadMore={() => onReadMore(p)} />
+             <ProjectCard key={p.slug} {...p} onReadMore={() => {}} />
            ))}
         </div>
         <div className="col-divider"></div>
         <div className="col">
            <p className="subhead">Technical Portfolio (N-Z)</p>
            {projects.slice(Math.ceil(projects.length / 2)).map((p) => (
-             <ProjectCard key={p.slug} {...p} onReadMore={() => onReadMore(p)} />
+             <ProjectCard key={p.slug} {...p} onReadMore={() => {}} />
            ))}
         </div>
       </div>
@@ -52,3 +54,4 @@ const ProjectArchives = ({ projects, onReadMore, onBack }) => {
 };
 
 export default ProjectArchives;
+
