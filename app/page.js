@@ -7,7 +7,7 @@ import Timeline from '@/components/Timeline';
 import data from '@/data/portfolioData.json';
 
 export default function Home() {
-  const { personalInfo, about, techStack, projects, experience, contact, quotes, publications, photography } = data;
+  const { personalInfo, about, techStack, projects, experience, contact, quotes, publications, spotlight, photography } = data;
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function Home() {
       <section className="page animated fadeIn" id="about">
         <div className="section-label" style={{ marginBottom: '18px' }}>
           <span className="section-label-rule"></span>
-          <span className="section-label-text">Front Page — Late City Edition</span>
+          <span className="section-label-text">Front Page â€” Late City Edition</span>
           <span className="section-label-rule"></span>
         </div>
 
@@ -24,13 +24,13 @@ export default function Home() {
           <h1 className="headline-main">{about.headline}</h1>
           <div className="headline-byline">Written & Engineered by <span style={{ color: 'var(--accent)', fontWeight: 'bold' }}>{personalInfo.name}</span></div>
           <p className="headline-deck">{about.deck}</p>
-          
+
           <div className="hero-cta-box">
             <a href={personalInfo.cvUrl} download className="gazette-btn btn-primary" title="Download Official PDF">
-              📜 View Full Record (Resume)
+              ðŸ“œ View Full Record (Resume)
             </a>
             <a href="#contact" className="gazette-btn btn-secondary" title="Establish Correspondence">
-              📨 Send Dispatch (Contact)
+              ðŸ“¨ Send Dispatch (Contact)
             </a>
           </div>
         </div>
@@ -41,42 +41,42 @@ export default function Home() {
             <p className="body-text dropcap">{about.body[0]}</p>
             <p className="body-text">{about.body[1]}</p>
             <div className="notices-box" data-title="At A Glance">
-               <div className="skill-row"><span>Open to Work</span><span style={{ color: 'var(--accent)' }}>{personalInfo.openToWork ? '✓ Yes' : 'No'}</span></div>
-               <div className="skill-row"><span>Location</span><span>{personalInfo.location}</span></div>
-               <div className="skill-row"><span>Education</span><span>{personalInfo.education}</span></div>
-               <div className="skill-row"><span>Role</span><span>{personalInfo.currentRole}</span></div>
+              <div className="skill-row"><span>Open to Work</span><span style={{ color: 'var(--accent)' }}>{personalInfo.openToWork ? 'âœ“ Yes' : 'No'}</span></div>
+              <div className="skill-row"><span>Location</span><span>{personalInfo.location}</span></div>
+              <div className="skill-row"><span>Education</span><span>{personalInfo.education}</span></div>
+              <div className="skill-row"><span>Role</span><span>{personalInfo.currentRole}</span></div>
             </div>
           </div>
           <div className="col-divider"></div>
           <div className="col" style={{ textAlign: 'center' }}>
-             <div className="avatar-frame">
-                <img src={personalInfo.avatarGif} alt={personalInfo.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-             </div>
-             <p className="subhead" style={{ marginBottom: '4px' }}>{personalInfo.name}</p>
-             <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.85rem', fontStyle: 'italic', marginBottom: '8px', color: 'var(--accent)', fontWeight: 'bold', letterSpacing: '0.01em', textTransform: 'uppercase' }}>
-               {personalInfo.powerLine}
-             </p>
-             <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.78rem', fontStyle: 'italic', marginBottom: '12px', opacity: 0.8 }}>{personalInfo.role}</p>
-             
-             <div className="stats-row">
-                <div className="stat-item">
-                  <span className="stat-number">{projects.length}+</span>
-                  <span className="stat-label">Projects</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">{personalInfo.studentsImpacted}</span>
-                  <span className="stat-label">Users Impacted</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">{personalInfo.awards + personalInfo.hackathons}</span>
-                  <span className="stat-label">{(personalInfo.awards + personalInfo.hackathons) > 1 ? 'Wins & Honors' : 'Major Win'}</span>
-                </div>
-             </div>
+            <div className="avatar-frame">
+              <img src={personalInfo.avatarGif} alt={personalInfo.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <p className="subhead" style={{ marginBottom: '4px' }}>{personalInfo.name}</p>
+            <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.85rem', fontStyle: 'italic', marginBottom: '8px', color: 'var(--accent)', fontWeight: 'bold', letterSpacing: '0.01em', textTransform: 'uppercase' }}>
+              {personalInfo.powerLine}
+            </p>
+            <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.78rem', fontStyle: 'italic', marginBottom: '12px', opacity: 0.8 }}>{personalInfo.role}</p>
 
-             <div className="pull-quote">
-                <p>"{quotes[0].text}"</p>
-                <cite>— {quotes[0].author}</cite>
-             </div>
+            <div className="stats-row">
+              <div className="stat-item">
+                <span className="stat-number">{projects.length}+</span>
+                <span className="stat-label">Projects</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{personalInfo.studentsImpacted}</span>
+                <span className="stat-label">Users Impacted</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{personalInfo.awards + personalInfo.hackathons}</span>
+                <span className="stat-label">{(personalInfo.awards + personalInfo.hackathons) > 1 ? 'Wins & Honors' : 'Major Win'}</span>
+              </div>
+            </div>
+
+            <div className="pull-quote">
+              <p>&ldquo;{quotes[0].text}&rdquo;</p>
+              <cite>â€” {quotes[0].author}</cite>
+            </div>
           </div>
           <div className="col-divider"></div>
           <div className="col">
@@ -90,11 +90,16 @@ export default function Home() {
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
-               <a href={publications.url} target="_blank" rel="noreferrer" className="project-link">Read Full Periodicals →</a>
+              <a href={publications.url} target="_blank" rel="noreferrer" className="project-link">Read Full Periodicals â†’</a>
+            </div>
+            <div className="news-brief">
+              <p className="news-brief-label">{spotlight.label}</p>
+              <p className="subhead" style={{ marginBottom: '8px' }}>{spotlight.title}</p>
+              <p className="body-text" style={{ marginBottom: '10px' }}>{spotlight.body}</p>
             </div>
             <div className="photo-box">
-               <div style={{ background: 'var(--paper-dark)', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem', filter: 'sepia(40%)' }}>⌨️</div>
-               <p className="photo-caption">Sources say the developer's workstation is rarely idle, often lit by the glow of a dozen open terminals.</p>
+              <img src="/pitch.jpeg" alt="Abhijeet Kakade pitching AVAXVERSE at Avalanche Team1 City Connect Nashik" />
+              <p className="photo-caption">{spotlight.caption}</p>
             </div>
           </div>
         </div>
@@ -118,7 +123,7 @@ export default function Home() {
           <div className="col">
             <p className="subhead">Front-End Arts</p>
             <SkillBox title="Client-Side" skills={techStack.slice(0, 1)} />
-            <p className="body-text">Mastery over the modern web's most powerful libraries, with an emphasis on seamless state management and vintage aesthetics.</p>
+            <p className="body-text">Mastery over the modern web&apos;s most powerful libraries, with an emphasis on seamless state management and vintage aesthetics.</p>
           </div>
           <div className="col-divider"></div>
           <div className="col">
@@ -159,11 +164,11 @@ export default function Home() {
             </React.Fragment>
           ))}
         </div>
-        
+
         <div style={{ textAlign: 'center', marginTop: '30px' }}>
-           <Link href="/archives" className="project-link" style={{ fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block', padding: '10px 20px', borderTop: '1px solid var(--ink)', borderBottom: '1px solid var(--ink)' }}>
-             View The Full Project Catalogue (Sheet III) →
-           </Link>
+          <Link href="/archives" className="project-link" style={{ fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block', padding: '10px 20px', borderTop: '1px solid var(--ink)', borderBottom: '1px solid var(--ink)' }}>
+            View The Full Project Catalogue (Sheet III) â†’
+          </Link>
         </div>
       </section>
 
@@ -179,45 +184,45 @@ export default function Home() {
 
         <div className="col-grid col-grid-2">
           <div className="col">
-             <h2 className="headline-main" style={{ fontSize: '1.8rem', marginBottom: '8px' }}>A Chronology of Professional Endeavours</h2>
-             <Timeline items={experience} onReadMore={() => {}} />
-             {/* Link is inside Timeline/Item, we'll update later */}
+            <h2 className="headline-main" style={{ fontSize: '1.8rem', marginBottom: '8px' }}>A Chronology of Professional Endeavours</h2>
+            <Timeline items={experience} onReadMore={() => {}} />
+            {/* Link is inside Timeline/Item, we'll update later */}
           </div>
           <div className="col-divider"></div>
           <div className="col" id="contact">
-             <p className="subhead">Establish Correspondence</p>
-             <div className="classifieds-grid">
-                <a className="classified" href={`mailto:${contact.email}`}>
-                  <span className="classified-icon">✉</span>
-                  <span className="classified-title">Electronic Mail</span>
-                  {contact.email}
-                </a>
-                <a className="classified" href={contact.github} target="_blank" rel="noreferrer">
-                  <span className="classified-icon">⌨</span>
-                  <span className="classified-title">GitHub Archives</span>
-                  Check Repositories
-                </a>
-                <a className="classified" href={contact.linkedin} target="_blank" rel="noreferrer">
-                  <span className="classified-icon">☎</span>
-                  <span className="classified-title">LinkedIn Ledger</span>
-                  Professional Network
-                </a>
-                <a className="classified" href={contact.twitter} target="_blank" rel="noreferrer">
-                  <span className="classified-icon">𝕏</span>
-                  <span className="classified-title">The X Dispatch</span>
-                  Latest Transmissions
-                </a>
-                <a className="classified" href={personalInfo.cvUrl} download>
-                  <span className="classified-icon">📄</span>
-                  <span className="classified-title">Curriculum Vitæ</span>
-                  Download PDF
-                </a>
-                <Link className="classified" href="/photography" style={{ width: '100%' }}>
-                  <span className="classified-icon">📸</span>
-                  <span className="classified-title">Sunday Supplement</span>
-                  Mobile Photography
-                </Link>
-             </div>
+            <p className="subhead">Establish Correspondence</p>
+            <div className="classifieds-grid">
+              <a className="classified" href={`mailto:${contact.email}`}>
+                <span className="classified-icon">âœ‰</span>
+                <span className="classified-title">Electronic Mail</span>
+                {contact.email}
+              </a>
+              <a className="classified" href={contact.github} target="_blank" rel="noreferrer">
+                <span className="classified-icon">âŒ¨</span>
+                <span className="classified-title">GitHub Archives</span>
+                Check Repositories
+              </a>
+              <a className="classified" href={contact.linkedin} target="_blank" rel="noreferrer">
+                <span className="classified-icon">â˜Ž</span>
+                <span className="classified-title">LinkedIn Ledger</span>
+                Professional Network
+              </a>
+              <a className="classified" href={contact.twitter} target="_blank" rel="noreferrer">
+                <span className="classified-icon">ð•</span>
+                <span className="classified-title">The X Dispatch</span>
+                Latest Transmissions
+              </a>
+              <a className="classified" href={personalInfo.cvUrl} download>
+                <span className="classified-icon">ðŸ“„</span>
+                <span className="classified-title">Curriculum VitÃ¦</span>
+                Download PDF
+              </a>
+              <Link className="classified" href="/photography" style={{ width: '100%' }}>
+                <span className="classified-icon">ðŸ“¸</span>
+                <span className="classified-title">Sunday Supplement</span>
+                Mobile Photography
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -228,10 +233,10 @@ export default function Home() {
           <p className="subhead" style={{ marginBottom: '24px', fontSize: '1.6rem' }}>Official Correspondence & Records</p>
           <div className="hero-cta-box" style={{ justifyContent: 'center', marginTop: 0, gap: '20px' }}>
             <a href={personalInfo.cvUrl} download className="gazette-btn btn-primary" style={{ padding: '14px 32px', fontSize: '1.1rem' }}>
-              📜 Download Full CV (PDF)
+              ðŸ“œ Download Full CV (PDF)
             </a>
             <a href="#about" className="gazette-btn btn-secondary" style={{ padding: '14px 32px', fontSize: '1.1rem' }}>
-              🗞️ Return to Masthead
+              ðŸ—žï¸ Return to Masthead
             </a>
           </div>
         </div>
