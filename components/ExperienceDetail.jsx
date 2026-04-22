@@ -10,25 +10,25 @@ const ExperienceDetail = ({ item }) => {
     <section className="page animated fadeIn">
       <div className="section-label" style={{ marginBottom: '18px' }}>
         <span className="section-label-rule"></span>
-        <span className="section-label-text">Special Supplement — Industrial Report</span>
+        <span className="section-label-text">Special Supplement &mdash; Industrial Report</span>
         <span className="section-label-rule"></span>
       </div>
 
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <button 
+        <button
           onClick={() => router.back()}
-          style={{ 
-            fontFamily: "'IM Fell English', serif", 
-            fontSize: '0.8rem', 
-            background: 'var(--ink)', 
-            color: 'var(--paper)', 
-            padding: '4px 12px', 
-            border: 'none', 
+          style={{
+            fontFamily: "'IM Fell English', serif",
+            fontSize: '0.8rem',
+            background: 'var(--ink)',
+            color: 'var(--paper)',
+            padding: '4px 12px',
+            border: 'none',
             cursor: 'pointer',
             float: 'left'
           }}
         >
-          ← Return to Front Page
+          &larr; Return to Front Page
         </button>
         <span className="kicker" style={{ clear: 'both', display: 'block', paddingTop: '10px' }}>{item.year} Chronology</span>
         <h1 className="headline-main" style={{ fontSize: '2.8rem' }}>{item.title}</h1>
@@ -38,22 +38,22 @@ const ExperienceDetail = ({ item }) => {
       <div className="col-grid col-grid-2">
         <div className="col">
           <p className="subhead">The Tenure Report: 6 Months of Technical Excellence</p>
-          <p className="byline">Dispatch by Abhijeet Kakade · Senior Industrial Analyst</p>
-          
+          <p className="byline">Dispatch by Abhijeet Kakade &middot; Senior Industrial Analyst</p>
+
           <div className="notices-box" data-title="Tenure Summary" style={{ marginTop: '20px' }}>
             <p className="body-text" style={{ fontSize: '0.85rem', marginBottom: 0 }}>
-              "A 6-month intensive tenure focused on full-stack architecture for emerging SaaS and FinTech platforms. Deliverables ranged from complex SQL database scaling to the implementation of secure payment orchestration layers."
+              &ldquo;A 6-month intensive tenure focused on full-stack architecture for emerging SaaS and FinTech platforms. Deliverables ranged from complex SQL database scaling to the implementation of secure payment orchestration layers.&rdquo;
             </p>
           </div>
 
           <div className="photo-box" style={{ marginTop: '25px' }}>
             <div style={{ background: 'var(--paper-dark)', height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem', filter: 'sepia(40%)' }}>
-              🏗️
+              &#127959;
             </div>
-            <p className="photo-caption">Visualizing the high-performance integration layers developed during the Autumn '25 sprint.</p>
+            <p className="photo-caption">Visualizing the high-performance integration layers developed during the Autumn &apos;25 sprint.</p>
           </div>
         </div>
-        
+
         <div className="col-divider"></div>
 
         <div className="col">
@@ -64,7 +64,7 @@ const ExperienceDetail = ({ item }) => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                   <p className="dispatch-title" style={{ margin: 0, fontSize: '1.1rem' }}>{proj.title}</p>
                   {proj.url && proj.url !== '#' && (
-                    <a href={proj.url} target="_blank" rel="noreferrer" className="project-link" style={{ fontSize: '0.75rem' }}>Visit Project →</a>
+                    <a href={proj.url} target="_blank" rel="noreferrer" className="project-link" style={{ fontSize: '0.75rem' }}>Visit Project &rarr;</a>
                   )}
                 </div>
                 <p style={{ fontFamily: "'IM Fell English', serif", fontSize: '0.8rem', fontStyle: 'italic', marginBottom: '8px', color: 'var(--accent)' }}>
@@ -84,16 +84,16 @@ const ExperienceDetail = ({ item }) => {
           </div>
 
           <div className="notices-box" data-title="Core Competencies" style={{ marginTop: '30px' }}>
-             <div className="skill-row"><span>Architecture</span><span>Full-Stack</span></div>
-             <div className="skill-row"><span>UI/UX</span><span>React / Next.js</span></div>
-             <div className="skill-row"><span>Infrastructure</span><span>Node / MariaDB / Mongo</span></div>
-             <div className="skill-row"><span>Integrations</span><span>Stripe / App Router</span></div>
+            <div className="skill-row"><span>Architecture</span><span>Full-Stack</span></div>
+            <div className="skill-row"><span>UI/UX</span><span>React / Next.js</span></div>
+            <div className="skill-row"><span>Infrastructure</span><span>Node / MariaDB / Mongo</span></div>
+            <div className="skill-row"><span>Integrations</span><span>Stripe / App Router</span></div>
           </div>
-          
+
           <div className="ornament-rule" style={{ marginTop: '40px' }}>
-            <hr /><span>❧</span><hr />
+            <hr /><span>&#10087;</span><hr />
           </div>
-          
+
           <p style={{ textAlign: 'center', fontFamily: "'IM Fell English', serif", fontStyle: 'italic', opacity: 0.6, fontSize: '0.8rem' }}>
             End of Supplement. Full technical records available upon request.
           </p>
@@ -104,4 +104,3 @@ const ExperienceDetail = ({ item }) => {
 };
 
 export default ExperienceDetail;
-

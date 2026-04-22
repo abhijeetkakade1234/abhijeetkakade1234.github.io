@@ -7,7 +7,7 @@ import Timeline from '@/components/Timeline';
 import data from '@/data/portfolioData.json';
 
 export default function Home() {
-  const { personalInfo, about, techStack, projects, experience, contact, quotes, publications, spotlight, photography } = data;
+  const { personalInfo, about, techStack, projects, experience, contact, quotes, publications, spotlight } = data;
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function Home() {
       <section className="page animated fadeIn" id="about">
         <div className="section-label" style={{ marginBottom: '18px' }}>
           <span className="section-label-rule"></span>
-          <span className="section-label-text">Front Page â€” Late City Edition</span>
+          <span className="section-label-text">Front Page &mdash; Late City Edition</span>
           <span className="section-label-rule"></span>
         </div>
 
@@ -27,10 +27,10 @@ export default function Home() {
 
           <div className="hero-cta-box">
             <a href={personalInfo.cvUrl} download className="gazette-btn btn-primary" title="Download Official PDF">
-              ðŸ“œ View Full Record (Resume)
+              &#128196; View Full Record (Resume)
             </a>
             <a href="#contact" className="gazette-btn btn-secondary" title="Establish Correspondence">
-              ðŸ“¨ Send Dispatch (Contact)
+              &#128233; Send Dispatch (Contact)
             </a>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function Home() {
             <p className="body-text dropcap">{about.body[0]}</p>
             <p className="body-text">{about.body[1]}</p>
             <div className="notices-box" data-title="At A Glance">
-              <div className="skill-row"><span>Open to Work</span><span style={{ color: 'var(--accent)' }}>{personalInfo.openToWork ? 'âœ“ Yes' : 'No'}</span></div>
+              <div className="skill-row"><span>Open to Work</span><span style={{ color: 'var(--accent)' }}>{personalInfo.openToWork ? '\u2713 Yes' : 'No'}</span></div>
               <div className="skill-row"><span>Location</span><span>{personalInfo.location}</span></div>
               <div className="skill-row"><span>Education</span><span>{personalInfo.education}</span></div>
               <div className="skill-row"><span>Role</span><span>{personalInfo.currentRole}</span></div>
@@ -75,7 +75,7 @@ export default function Home() {
 
             <div className="pull-quote">
               <p>&ldquo;{quotes[0].text}&rdquo;</p>
-              <cite>â€” {quotes[0].author}</cite>
+              <cite>&mdash; {quotes[0].author}</cite>
             </div>
           </div>
           <div className="col-divider"></div>
@@ -90,7 +90,7 @@ export default function Home() {
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
-              <a href={publications.url} target="_blank" rel="noreferrer" className="project-link">Read Full Periodicals â†’</a>
+              <a href={publications.url} target="_blank" rel="noreferrer" className="project-link">Read Full Periodicals &rarr;</a>
             </div>
             <div className="news-brief">
               <p className="news-brief-label">{spotlight.label}</p>
@@ -158,7 +158,6 @@ export default function Home() {
             <React.Fragment key={p.slug}>
               <div className="col">
                 <ProjectCard {...p} onReadMore={() => {}} />
-                {/* Link is inside ProjectCard, we'll update ProjectCard later */}
               </div>
               {i < 2 && <div className="col-divider"></div>}
             </React.Fragment>
@@ -167,7 +166,7 @@ export default function Home() {
 
         <div style={{ textAlign: 'center', marginTop: '30px' }}>
           <Link href="/archives" className="project-link" style={{ fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block', padding: '10px 20px', borderTop: '1px solid var(--ink)', borderBottom: '1px solid var(--ink)' }}>
-            View The Full Project Catalogue (Sheet III) â†’
+            View The Full Project Catalogue (Sheet III) &rarr;
           </Link>
         </div>
       </section>
@@ -186,39 +185,38 @@ export default function Home() {
           <div className="col">
             <h2 className="headline-main" style={{ fontSize: '1.8rem', marginBottom: '8px' }}>A Chronology of Professional Endeavours</h2>
             <Timeline items={experience} onReadMore={() => {}} />
-            {/* Link is inside Timeline/Item, we'll update later */}
           </div>
           <div className="col-divider"></div>
           <div className="col" id="contact">
             <p className="subhead">Establish Correspondence</p>
             <div className="classifieds-grid">
               <a className="classified" href={`mailto:${contact.email}`}>
-                <span className="classified-icon">âœ‰</span>
+                <span className="classified-icon">&#9993;</span>
                 <span className="classified-title">Electronic Mail</span>
                 {contact.email}
               </a>
               <a className="classified" href={contact.github} target="_blank" rel="noreferrer">
-                <span className="classified-icon">âŒ¨</span>
+                <span className="classified-icon">GH</span>
                 <span className="classified-title">GitHub Archives</span>
                 Check Repositories
               </a>
               <a className="classified" href={contact.linkedin} target="_blank" rel="noreferrer">
-                <span className="classified-icon">â˜Ž</span>
+                <span className="classified-icon">in</span>
                 <span className="classified-title">LinkedIn Ledger</span>
                 Professional Network
               </a>
               <a className="classified" href={contact.twitter} target="_blank" rel="noreferrer">
-                <span className="classified-icon">ð•</span>
+                <span className="classified-icon">X</span>
                 <span className="classified-title">The X Dispatch</span>
                 Latest Transmissions
               </a>
               <a className="classified" href={personalInfo.cvUrl} download>
-                <span className="classified-icon">ðŸ“„</span>
-                <span className="classified-title">Curriculum VitÃ¦</span>
+                <span className="classified-icon">&#128196;</span>
+                <span className="classified-title">Curriculum Vitae</span>
                 Download PDF
               </a>
               <Link className="classified" href="/photography" style={{ width: '100%' }}>
-                <span className="classified-icon">ðŸ“¸</span>
+                <span className="classified-icon">&#128248;</span>
                 <span className="classified-title">Sunday Supplement</span>
                 Mobile Photography
               </Link>
@@ -233,10 +231,10 @@ export default function Home() {
           <p className="subhead" style={{ marginBottom: '24px', fontSize: '1.6rem' }}>Official Correspondence & Records</p>
           <div className="hero-cta-box" style={{ justifyContent: 'center', marginTop: 0, gap: '20px' }}>
             <a href={personalInfo.cvUrl} download className="gazette-btn btn-primary" style={{ padding: '14px 32px', fontSize: '1.1rem' }}>
-              ðŸ“œ Download Full CV (PDF)
+              &#128196; Download Full CV (PDF)
             </a>
             <a href="#about" className="gazette-btn btn-secondary" style={{ padding: '14px 32px', fontSize: '1.1rem' }}>
-              ðŸ—žï¸ Return to Masthead
+              &larr; Return to Masthead
             </a>
           </div>
         </div>
