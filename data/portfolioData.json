@@ -32,20 +32,6 @@
   ],
   "projects": [
     {
-      "title": "IceBreaker",
-      "slug": "icebreaker",
-      "category": "Social App",
-      "date": "May 2026",
-      "techStack": "React, Frontend",
-      "impact": "Got 200 users on day 1 of release.",
-      "description": "Built IceBreaker, a social app for discovering and sharing community-vetted conversation starters for real-life interactions.",
-      "features": [
-        "Community-Vetted Content: Discover and share high-quality conversation starters.",
-        "Real-Life Connection: Designed to facilitate meaningful face-to-face interactions."
-      ],
-      "url": "https://breaking-ice.pages.dev"
-    },
-    {
       "title": "Event Discovery & Booking Platform",
       "slug": "eventpin",
       "category": "SaaS / Full-Stack",
@@ -77,8 +63,22 @@
       "url": "https://www.chairmansaheb.com/"
     },
     {
-      "title": "Tranpoline",
-      "slug": "tranpoline",
+      "title": "IceBreaker",
+      "slug": "icebreaker",
+      "category": "Social App",
+      "date": "May 2026",
+      "techStack": "React, Frontend",
+      "impact": "Got 200 users on day 1 of release.",
+      "description": "Built IceBreaker, a social app for discovering and sharing community-vetted conversation starters for real-life interactions.",
+      "features": [
+        "Community-Vetted Content: Discover and share high-quality conversation starters.",
+        "Real-Life Connection: Designed to facilitate meaningful face-to-face interactions."
+      ],
+      "url": "https://breaking-ice.pages.dev"
+    },
+    {
+      "title": "Trampoline",
+      "slug": "trampoline",
       "category": "Technical Web Design",
       "date": "2025",
       "techStack": "Next.js, TypeScript, App Router",
