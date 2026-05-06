@@ -32,6 +32,20 @@
   ],
   "projects": [
     {
+      "title": "IceBreaker",
+      "slug": "icebreaker",
+      "category": "Social App",
+      "date": "May 2026",
+      "techStack": "React, Frontend",
+      "impact": "Got 200 users on day 1 of release.",
+      "description": "Built IceBreaker, a social app for discovering and sharing community-vetted conversation starters for real-life interactions.",
+      "features": [
+        "Community-Vetted Content: Discover and share high-quality conversation starters.",
+        "Real-Life Connection: Designed to facilitate meaningful face-to-face interactions."
+      ],
+      "url": "https://breaking-ice.pages.dev"
+    },
+    {
       "title": "Event Discovery & Booking Platform",
       "slug": "eventpin",
       "category": "SaaS / Full-Stack",
@@ -125,38 +139,6 @@
       "url": "#"
     },
     {
-      "title": "Kimiko (キミコ)",
-      "slug": "kimiko",
-      "category": "Privacy / Web3",
-      "date": "4 February, 2026",
-      "techStack": "Solana, Inco Lightning (FHE), Next.js 14",
-      "impact": "Advanced FHE privacy layer for compliance-grade Solana audits.",
-      "description": "High-end wallet analysis engine and compliance toolkit for Solana focusing on 'Selective Visibility'.",
-      "features": [
-        "Privacy Scoring: Quantifies on-chain traceability and detects leakage vectors.",
-        "Inco Shield (FHE): Uses Fully Homomorphic Encryption for trustless, encrypted identity attestations.",
-        "Behavioral Compliance: Verifies users based on historical behavior rather than traditional KYC.",
-        "Zen Interface: Tactical 'Digital Zen' HUD for human-readable risk assessments."
-      ],
-      "url": "#"
-    },
-    {
-      "title": "YAMI (闇)",
-      "slug": "yami",
-      "category": "Privacy / Solana",
-      "date": "4 February, 2026",
-      "techStack": "Next.js 14, SPL Token 2022",
-      "impact": "Backendless Shadow-Ledger implementation with XOR masking.",
-      "description": "Premium, backendless privacy layer for the Solana ecosystem featuring confidential transfers.",
-      "features": [
-        "Confidential Transfers: Native Token-2022 extensions for encrypted balances.",
-        "ShadowWire Integration: High-fidelity ZK experience simulating internal 'Shadow Ledger' states.",
-        "LocalStorage Obfuscation: XOR-based masking to secure sensitive history locally without a backend.",
-        "Real-time Auditing: Integrated health monitoring for Solana Devnet nodes."
-      ],
-      "url": "#"
-    },
-    {
       "title": "CodeNap",
       "slug": "codenap",
       "category": "Chrome Extension",
@@ -200,21 +182,6 @@
         "Performance Optimized: Built for accessibility across the campus network."
       ],
       "url": "https://cosagcoerc.com/"
-    },
-    {
-      "title": "Previous Portfolio",
-      "slug": "previous-portfolio",
-      "category": "Website",
-      "date": "16 September, 2026",
-      "techStack": "HTML, CSS, GSAP",
-      "impact": "Advanced GSAP storytelling with 60FPS motion performance.",
-      "description": "Personal portfolio demonstrating mobile and web development skills with advanced animations.",
-      "features": [
-        "GSAP Animations: High-fidelity motion design across all sections.",
-        "Mobile First: Completely responsive design for every viewport.",
-        "Interactive Storytelling: Engaging user journey through developer history."
-      ],
-      "url": "#"
     }
   ],
   "experience": [
@@ -240,7 +207,7 @@
           ]
         },
         {
-          "title": "Tranpoline",
+          "title": "Trampoline",
           "url": "#",
           "tech": "Next.js, TypeScript, App Router",
           "work": [
