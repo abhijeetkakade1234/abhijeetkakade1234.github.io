@@ -32,6 +32,23 @@
   ],
   "projects": [
     {
+      "title": "AvaAgent",
+      "slug": "ava-agent",
+      "category": "Web3 / AI / Dev Tools",
+      "date": "May 2026",
+      "techStack": "Avalanche, TypeScript, Node.js, 0x Protocol, MCP",
+      "impact": "Local-first programmable Avalanche wallet layer for terminal, code, and Codex.",
+      "description": "A comprehensive toolkit for Avalanche developers, providing a local-first wallet experience with CLI, SDK, and Codex integration.",
+      "features": [
+        "Multi-Interface: Accessible via CLI (avaagent), JS SDK, and Codex plugin with MCP server.",
+        "Secure Local Wallet: Creates and encrypts wallets locally for maximum privacy and control.",
+        "DeFi Integration: Quotes and executes swaps on Avalanche through 0x Protocol.",
+        "Codex Native: Exposes wallet actions to Codex through high-performance plugin tools.",
+        "Programmable Transfers: Native support for AVAX and token transfers via terminal or code."
+      ],
+      "url": "https://github.com/abhijeetkakade1234/AvaAgent"
+    },
+    {
       "title": "Event Discovery & Booking Platform",
       "slug": "eventpin",
       "category": "SaaS / Full-Stack",
