@@ -1,11 +1,11 @@
 {
   "personalInfo": {
     "name": "Abhijeet Kakade",
-    "role": "Web3 Pioneer & Full-Stack Developer",
+    "role": "Full-Stack Developer · Web2, AI, and Web3",
     "location": "Nashik, IN",
     "education": "BE CSE (2026)",
     "currentRole": "Intern @ AI Alpha Tech",
-    "powerLine": "Building Scalable Interfaces at the Intersection of AI & Web3",
+    "powerLine": "Building fast web products with practical AI and selective Web3",
     "awards": 1,
     "hackathons": 0,
     "studentsImpacted": "1,000+",
@@ -15,13 +15,13 @@
   },
   "about": {
     "kicker": "Breaking News · Talent & Technology",
-    "headline": "Web3 Pioneer Stuns World With Autonomous Agent Breakthrough",
-    "deck": "Abhijeet Kakade, an intern at AI Alpha Tech, bridges the gap between AI and Blockchain with winning hackathon entries.",
+    "headline": "Full-Stack Developer Shipping Across Web2, AI, and Web3",
+    "deck": "Abhijeet Kakade is focused mostly on web2 products today, with hands-on work in AI tooling and selective Web3 systems where they actually fit.",
     "byline": "By Our Digital Correspondent · Nashik Bureau",
     "body": [
-      "Abhijeet Kakade is a Web3 and frontend developer specializing in React, AI agents, and scalable UI systems. Sources close to the development community confirmed late Tuesday that Kakade has assembled a portfolio of work so impressive that senior colleagues were left temporarily speechless.",
-      "Specializing in autonomous agents and gasless Web3 experiences, Kakade has already made waves with 'OnlyPngs', a hackathon-winning project that leverages Account Abstraction and LLMs.",
-      "My mission is to simplify complex blockchain interactions using natural language."
+      "Abhijeet Kakade is a full-stack developer focused primarily on web2 products, scalable frontend systems, and practical AI integrations.",
+      "Earlier work in autonomous agents and gasless Web3 experiences helped shape his technical base, but the current focus is broader product engineering and tools people actually use.",
+      "My mission is to build fast, useful software that solves real problems without unnecessary complexity."
     ]
   },
   "techStack": [
@@ -47,6 +47,38 @@
         "Programmable Transfers: Native support for AVAX and token transfers via terminal or code."
       ],
       "url": "https://github.com/abhijeetkakade1234/AvaAgent"
+    },
+    {
+      "title": "MotionSplit",
+      "slug": "motionsplit",
+      "category": "Side Project / Creator Tool",
+      "date": "2026",
+      "techStack": "React, TypeScript, Vite, Tailwind CSS, ffmpeg.wasm, JSZip, Framer Motion, GSAP, Vite PWA",
+      "impact": "Local video-to-frame extraction without ads, low-quality compression, or uploads.",
+      "description": "Built MotionSplit as a personal tool after running into ad-heavy, low-quality video-to-image converters. It extracts clean frames in the browser so those images can be reused quickly while creating content and websites.",
+      "features": [
+        "Browser-Local Processing: Uses ffmpeg.wasm so the source video stays on the device.",
+        "Precise Extraction Controls: Export every frame or sample by FPS with custom start/end range.",
+        "Clean Output: Download PNG or JPG sequences as a single ZIP without quality-killing online compression.",
+        "Builder Utility: Made to speed up content and website creation when still frames are needed fast."
+      ],
+      "url": "https://motionsplit.vercel.app/"
+    },
+    {
+      "title": "FlowDrop",
+      "slug": "flowdrop",
+      "category": "Utility / Cross-Device Sharing",
+      "date": "2026",
+      "techStack": "React, Vite, Tailwind CSS, Cloudflare Pages, Cloudflare Workers, Hono, D1, Durable Objects, WebSockets",
+      "impact": "Quick cross-device handoff for your own devices without account friction.",
+      "description": "Built FlowDrop to solve the daily problem of moving text, images, and files across devices. It is a Chrome-first sharing tool for fast transfers between your own devices over the internet.",
+      "features": [
+        "Zero-Account Pairing: Connect devices with a simple OTP instead of email, chat apps, or sign-in flows.",
+        "Live Session Handoff: Designed for quick transfer of copied text, links, images, and files across devices.",
+        "Ephemeral by Default: Temporary sessions keep the tool focused on handoff, not long-term storage.",
+        "Cloudflare-Native Realtime Stack: Uses Workers, Durable Objects, D1, and WebSockets for fast sync."
+      ],
+      "url": "https://flowdrop.pages.dev/"
     },
     {
       "title": "Event Discovery & Booking Platform",
@@ -202,6 +234,12 @@
     }
   ],
   "experience": [
+    {
+      "slug": "avalanche-team1",
+      "year": "Jul 2026 - Present",
+      "title": "Collaborator — Avalanche Team1",
+      "desc": "Part-time remote collaborator with Avalanche Team1."
+    },
     { 
       "slug": "ai-alpha-tech",
       "year": "2025-26", 
