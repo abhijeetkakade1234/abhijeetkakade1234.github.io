@@ -210,6 +210,11 @@ export default function Home() {
                 <span className="classified-title">The X Dispatch</span>
                 Latest Transmissions
               </a>
+              <a className="classified" href={contact.reels} target="_blank" rel="noreferrer">
+                <span className="classified-icon">IG</span>
+                <span className="classified-title">Educational Reels</span>
+                System Design &amp; Hardware Series
+              </a>
               <a className="classified" href={personalInfo.cvUrl} download>
                 <span className="classified-icon">&#128196;</span>
                 <span className="classified-title">Curriculum Vitae</span>
